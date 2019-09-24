@@ -110,7 +110,9 @@
                     </tr>
                 </tbody>
             </table>
-            <div class="menu-botoes">
+            
+        </div>
+        <div class="menu-botoes">
                     <button class="bt-menus bt-acoes" 
                         >
                         Salvar
@@ -124,4 +126,3 @@
                         Cancelar
                     </button>
                 </div>
-        </div>

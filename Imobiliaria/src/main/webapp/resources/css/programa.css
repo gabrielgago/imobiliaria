@@ -65,7 +65,7 @@
     left: 3%;
     top: 3%;
     padding: 0px;
-    overflow: auto;
+/*     overflow: auto; */
 }
 
 footer, header{
@@ -198,6 +198,7 @@ body{
     width: 100%;
     display: flex;
     justify-content: center;
+    overflow: auto;
 }
 
 table {
