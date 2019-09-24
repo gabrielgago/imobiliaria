@@ -149,7 +149,7 @@
     </div>
     <!-- conteudo -->
     <div class="corpo">
-         <%@include file='conteudos/conteudo-despesas.jsp'%>
+         <%@include file='conteudos/conteudo-locadores.jsp'%>
     </div>
 </div>
 <footer></footer>

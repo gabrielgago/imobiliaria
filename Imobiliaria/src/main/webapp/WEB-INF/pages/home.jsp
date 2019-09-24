@@ -105,7 +105,7 @@
 		</div>
 		<!-- conteudo -->
 		<div class="corpo">
-			 <%@include file='conteudos/conteudo-despesas.jsp'%>
+			 <%@include file='conteudos/conteudo-home.jsp'%>
 		</div>
 	</div>
 	<footer></footer>
