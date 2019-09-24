@@ -10,7 +10,6 @@ public class HomeController {
 
 	@GetMapping("/run")
 	public String runHome() {
-		System.out.println("Tudo ok!");
 		return "home";
 	}
 	

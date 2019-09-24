@@ -33,12 +33,12 @@
 		<div class="sub-menu sb-cadastros">
 			<div>
 				<button class="bt-menus"
-					onclick="location.href='cadastros/imoveis';">Imóveis</button>
+					onclick="location.href='../cadastros/imoveis';">Imóveis</button>
 				<button class="bt-menus"
-					onclick="location.href='cadastros/locadores';">
+					onclick="location.href='../cadastros/locadores';">
 					Locadores</button>
 				<button class="bt-menus"
-					onclick="location.href='cadastros/locatarios';">
+					onclick="location.href='../cadastros/locatarios';">
 					Locatários</button>
 
 			</div>
@@ -105,9 +105,7 @@
 		</div>
 		<!-- conteudo -->
 		<div class="corpo">
-			<p>
-				<strong>Dashboard</strong>
-			</p>
+			 <%@include file='conteudos/conteudo-despesas.jsp'%>
 		</div>
 	</div>
 	<footer></footer>

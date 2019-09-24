@@ -159,7 +159,8 @@ body{
     left: 20%;
     margin: 0;
     padding: 0;
-    top: 165px;
+/*     top: 165px; */
+	top: 113px;
     /* display: block; */
     /* box-shadow: 0 7px 14px 7px rgba(0, 0, 0, 0.5); */
     box-shadow: 5px 9px 7px 3px rgba(0, 0, 0, 0.5);
@@ -169,17 +170,17 @@ body{
 }
 
 .sb-financeiros {
-    top: 220px !important;
+    top: 167px !important;
 }
 
 .sb-relatorios {
-    top: 275px !important;
+    top: 223px !important;
 }
 .sb-outros {
-    top: 330px !important;
+    top: 278px !important;
 }
 .sb-configuracao {
-    top: 385px !important;
+    top: 333px !important;
 }
 
 .title {

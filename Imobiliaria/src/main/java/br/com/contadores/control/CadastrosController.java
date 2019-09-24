@@ -10,8 +10,11 @@ public class CadastrosController {
 
 	@GetMapping("/imoveis")
 	public String runCadastroImoveis() {
-		System.out.println("Entrou em cadastroImoveis");
 		return "cadastro-imoveis";
+	}
+	@GetMapping("/despesas")
+	public String runCadastroDespesas() {
+		return "cadastro-despesas";
 	}
 	
 }
