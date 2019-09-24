@@ -1,21 +1,31 @@
 <!DOCTYPE >
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="programa.css">
-        <link href="icons/css/all.css" rel="stylesheet">
-        <!--[if lt IE 9]>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" pageEncoding="UTF-8"%> 
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="<c:url value = "/resources/css/programa.css"/>" />
+<link rel="stylesheet" href="<c:url value = "/resources/css/input.css"/>" />
+<link rel="stylesheet" href="<c:url value = "/resources/icons/css/all.css"/>" />
+		<!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-    </head>
+</head>
     <body>
- <header> 
-     <div class="nome-sistema"><p>SISTEMA IMOBILIARIO</p></div> 
-     <div class="logo"><img src="logo.png" alt="Home" class="logo-sistema"></div>
-     <!--<i class="fas fa-search"></i>-->
-     <div class="search"></div>
- </header>   
+ <header>
+		<div class="nome-sistema">
+			<p>SISTEMA IMOBILIARIO</p>
+		</div>
+		<div class="logo">
+			<img src="<c:url value = "/resources/imgs/logo.png"/>" alt="Home" class="logo-sistema">
+		</div>
+		<!--<i class="fas fa-search"></i>-->
+		<div class="search"></div>
+	</header>
 
 
 <div class="container">
@@ -143,7 +153,7 @@
     </div>
 </div>
 <footer></footer>
-<script src="programa.js"></script>
-<script src="jquery-3.4.1.min.js"></script>
+	<script src="<c:url value = "/resources/js/jquery-3.4.1.min.js"/>"></script>
+	<script src="<c:url value = "/resources/js/programa.js"/>"></script>
    </body>
 </html>

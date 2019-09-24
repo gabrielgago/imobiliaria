@@ -1,20 +1,31 @@
-<!DOCTYPE html>
+<!DOCTYPE >
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" pageEncoding="UTF-8"%> 
 <html lang="pt-BR">
 <head>
-    <link rel="stylesheet" href="programa.css">
-    <link rel="stylesheet" href="input.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="<c:url value = "/resources/css/programa.css"/>" />
+<link rel="stylesheet" href="<c:url value = "/resources/css/input.css"/>" />
+<link rel="stylesheet" href="<c:url value = "/resources/icons/css/all.css"/>" />
+		<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
 </head>
 <body>
-    <header style="height: 55px;">
-            <div class="nome-sistema"><p>SISTEMA IMOBILIARIO</p></div> 
-            <div class="logo"><img src="logo.png" alt="Home" class="logo-sistema"></div>
-            <!--<i class="fas fa-search"></i>-->
-            <div class="search"></div>
-    </header>
+   <header>
+		<div class="nome-sistema">
+			<p>SISTEMA IMOBILIARIO</p>
+		</div>
+		<div class="logo">
+			<img src="<c:url value = "/resources/imgs/logo.png"/>" alt="Home" class="logo-sistema">
+		</div>
+		<!--<i class="fas fa-search"></i>-->
+		<div class="search"></div>
+	</header>
     <div class="container-login">
         <div class="caixa">
             <div class="titulo-login"><strong><span>Login</span></strong></div>

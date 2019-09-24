@@ -14,9 +14,6 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @ComponentScan(basePackages = { "br.com.contadores" })
 public class AppConfig extends WebMvcConfigurerAdapter {
 
-	private static final String[] CLASSPATH_RESOURCE_LOCATIONS = { "classpath:/META-INF/resources/",
-			"classpath:/resources/", "classpath:/static/", "classpath:/public/" };
-
 	@Override
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
 		configurer.enable();
