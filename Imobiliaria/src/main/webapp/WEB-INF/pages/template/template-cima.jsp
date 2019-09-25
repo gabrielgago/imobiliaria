@@ -18,10 +18,10 @@
 <body>
 	<header>
 		<div class="nome-sistema">
-			<p>SISTEMA IMOBILIARIO</p>
+			<i class="fas fa-hotel"></i><p style="margin: 0 0 0 8px;">SISTEMA IMOBILIARIO</p>
 		</div>
 		<div class="logo">
-			<img src="<c:url value = "/resources/imgs/logo.png"/>" alt="Home" class="logo-sistema">
+			<img src="<c:url value = "/resources/imgs/logo-2.png"/>" alt="Home" class="logo-sistema">
 		</div>
 		<!--<i class="fas fa-search"></i>-->
 		<div class="search"></div>
@@ -103,13 +103,4 @@
 
 			</div>
 		</div>
-		<!-- conteudo -->
-		<div class="corpo">
-			 <%@include file='conteudos/conteudo-home.jsp'%>
-		</div>
-	</div>
-	<footer></footer>
-	<script src="<c:url value = "/resources/js/jquery-3.4.1.min.js"/>"></script>
-	<script src="<c:url value = "/resources/js/programa.js"/>"></script>
-</body>
-</html>
+		

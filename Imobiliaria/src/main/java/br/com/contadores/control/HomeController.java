@@ -12,5 +12,4 @@ public class HomeController {
 	public String runHome() {
 		return "home";
 	}
-	
 }
