@@ -168,8 +168,8 @@
 				<td class="entrada"><input type="number" class="input cpf" /></td>
 			</tr>
 	</table>
-
 </div>
+
 <div class="menu-botoes">
 	<button class="bt-menus bt-acoes">Salvar</button>
 	<button class="bt-menus bt-acoes">Limpar</button>

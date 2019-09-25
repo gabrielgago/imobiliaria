@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="<c:url value = "/resources/css/programa.css"/>" />
 <link rel="stylesheet" href="<c:url value = "/resources/css/input.css"/>" />
 <link rel="stylesheet" href="<c:url value = "/resources/icons/css/all.css"/>" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -17,10 +18,10 @@
 </head>
 <body>
 	<header>
-		<div class="nome-sistema">
+		<div class="nome-sistema" onclick="window.location.href = '../home/run'">
 			<i class="fas fa-hotel"></i><p style="margin: 0 0 0 8px;">SISTEMA IMOBILIARIO</p>
 		</div>
-		<div class="logo">
+		<div class="logo" onclick="window.location.href = '../'">
 			<img src="<c:url value = "/resources/imgs/logo-2.png"/>" alt="Home" class="logo-sistema">
 		</div>
 		<!--<i class="fas fa-search"></i>-->
