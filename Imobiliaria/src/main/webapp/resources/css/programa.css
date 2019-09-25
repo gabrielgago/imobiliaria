@@ -199,6 +199,7 @@ body{
     display: flex;
     justify-content: center;
     overflow: auto;
+    margin-bottom: 62px;
 }
 
 table {
@@ -243,7 +244,7 @@ table tr{
 }
 
 .sub-titulo-tr{
-    line-height: 3
+    line-height: 2
 }
 
 .hidden{
