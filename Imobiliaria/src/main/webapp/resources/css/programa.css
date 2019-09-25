@@ -288,6 +288,11 @@ table tr {
 	transition-duration: 0.4s;
 }
 
+form{
+	display: flex;
+    width: 100%;
+}
+
 /* .bt-cadastro:hover{
     background: indigo !important; 
 } */

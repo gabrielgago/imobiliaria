@@ -12,9 +12,4 @@ public class CadastrosController {
 	public String runCadastroImoveis() {
 		return "cadastro-imoveis";
 	}
-	@GetMapping("/despesas")
-	public String runCadastroDespesas() {
-		return "cadastro-despesas";
-	}
-	
 }
