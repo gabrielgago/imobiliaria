@@ -139,4 +139,14 @@ public class Imovel {
 		this.id = id;
 	}
 
+	@Override
+	public String toString() {
+		return "Imovel [id=" + id + ", codigo=" + codigo + ", descricao=" + descricao + ", codigoProprietario="
+				+ codigoProprietario + ", enderecoImovel=" + enderecoImovel + ", enderecoCorrespondencia="
+				+ enderecoCorrespondencia + ", impostoPredial=" + impostoPredial + ", numeroApoliceSeguros="
+				+ numeroApoliceSeguros + ", codigoSegurador=" + codigoSegurador + ", dataVencimento=" + dataVencimento
+				+ ", inscricaoCedae=" + inscricaoCedae + ", dataInscricao=" + dataInscricao + ", codigoLogradouro="
+				+ codigoLogradouro + "]";
+	}
+
 }

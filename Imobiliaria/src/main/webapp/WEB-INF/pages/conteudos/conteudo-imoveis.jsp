@@ -1,5 +1,5 @@
 <strong class="title">Cadastro de Imóveis</strong>
-<form action="../cadastrar/cadastrarImovel" method="POST">
+<form action="../cadastros/cadastrar/imovel" method="POST" >
 	<div class="formulario">
 		<table>
 			<tbody>
@@ -162,7 +162,7 @@
 				</tr>
 				<tr class="hidden hidden-outros">
 					<td class="label">Data vencimento</td>
-					<td class="entrada"><input type="number" class="input cpf"
+					<td class="entrada"><input type="date" class="input cpf"
 						name="dataVencimento" /></td>
 				</tr>
 				<tr class="hidden hidden-outros">
@@ -172,7 +172,7 @@
 				</tr>
 				<tr class="hidden hidden-outros">
 					<td class="label">Data</td>
-					<td class="entrada"><input type="number" class="input cpf"
+					<td class="entrada"><input type="date" class="input cpf"
 						name="dataInscricao" /></td>
 				</tr>
 				<tr class="hidden hidden-outros">
