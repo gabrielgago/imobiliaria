@@ -11,6 +11,11 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
+import org.springframework.stereotype.Component;
+
+@Component
 @Entity
 public class Imovel {
 
@@ -21,16 +26,21 @@ public class Imovel {
 	private String descricao;
 	private int codigoProprietario;
 	@OneToOne
-	private Endereco enderecoImovel;
+	private Endereco enderecoImovel = new Endereco();
 	@OneToOne
-	private Endereco enderecoCorrespondencia;
+	private Endereco enderecoCorrespondencia = new Endereco();
 	@Column(scale = 2, precision = 2)
-	private BigDecimal impostoPredial;
+//	@NumberFormat(pattern = "##.##.##.##,##")
+//	private BigDecimal impostoPredial;
+//	@NumberFormat(pattern = "##.##.##.##,##")
+	private Double impostoPredial;
 	private String numeroApoliceSeguros;
 	private int codigoSegurador;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
 	private Calendar dataVencimento;
 	private int inscricaoCedae;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
 	private Calendar dataInscricao;
 	private int codigoLogradouro;
@@ -75,11 +85,11 @@ public class Imovel {
 		this.enderecoCorrespondencia = enderecoCorrespondencia;
 	}
 
-	public BigDecimal getImpostoPredial() {
+	public Double getImpostoPredial() {
 		return impostoPredial;
 	}
 
-	public void setImpostoPredial(BigDecimal impostoPredial) {
+	public void setImpostoPredial(Double impostoPredial) {
 		this.impostoPredial = impostoPredial;
 	}
 

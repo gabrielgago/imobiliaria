@@ -1,4 +1,19 @@
-<strong class="title">Cadastro de Imóveis</strong>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<strong class="title">Cadastro de Imóveis</strong><br>
+<c:if test="${ not empty success }">
+	<div class="msg msg-success">
+	
+	${ success }
+	
+	</div>
+</c:if>
+<c:if test="${ not empty error }">
+	<div class="msg msg-error">
+	
+	${ error }
+	
+	</div>
+</c:if>
 <form action="../cadastros/cadastrar/imovel" method="POST" >
 	<div class="formulario">
 		<table>
@@ -10,15 +25,15 @@
 					</td>
 				</tr>
 				<tr class="hidden hidden-geral">
-					<td class="label">Código</td>
+					<td class="label im-required">Código</td>
 					<td class="entrada"><input type="number" class="input codigo"
-						name="codigo" /> <i
+						name="codigo" value="${imovel.codigo}"/> <i
 						class="fas fa-sync-alt atualizar atualizar-codigo"></i></td>
 				</tr>
 				<tr class="hidden hidden-geral">
 					<td class="label">Descrição</td>
 					<td class="entrada"><input type="text" class="input descricao"
-						name="descricao" /></td>
+						name="descricao" value="${imovel.descricao}"/></td>
 				</tr>
 				<!-- Sessao proprietario -->
 				<tr class="sub-titulo-tr">
@@ -147,7 +162,7 @@
 				</tr>
 				<tr class="hidden hidden-outros">
 					<td class="label">Imposto Predial</td>
-					<td class="entrada"><input type="number" class="input codigo"
+					<td class="entrada"><input type="text" class="input codigo"
 						name="impostoPredial" /></td>
 				</tr>
 				<tr class="hidden hidden-outros">

@@ -202,7 +202,7 @@ body {
 }
 
 .formulario {
-	margin-top: 7%;
+	margin-top: 10%;
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -288,9 +288,35 @@ table tr {
 	transition-duration: 0.4s;
 }
 
-form{
+form {
 	display: flex;
-    width: 100%;
+	width: 100%;
+}
+
+.msg {
+	position: absolute;
+	top: 37px;
+	border: 1px solid white;
+	border-radius: 4px;
+	width: 90%;
+	left: 5%;
+	text-align: center;
+	height: 6%;
+	width: 89%;
+	-webkit-text-stroke: thin;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.5);
+}
+
+.msg-success {
+	background-color: lightgreen;
+}
+
+.msg-error {
+	background-color: lightcoral;
 }
 
 /* .bt-cadastro:hover{

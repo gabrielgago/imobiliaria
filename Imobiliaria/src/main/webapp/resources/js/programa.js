@@ -38,4 +38,9 @@ jQuery('.sub-titulo-td').each(function(index, element){
     })
 });
 
-
+var msg = jQuery('.msg')[0];
+if(msg != 'undefined'){
+	setTimeout( function() {
+		jQuery(msg).fadeOut(3000);
+		}, 6000 );
+}
