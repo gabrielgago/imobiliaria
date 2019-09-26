@@ -1,28 +1,37 @@
 <!DOCTYPE >
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page language="java" pageEncoding="UTF-8"%> 
+<%@ page language="java" pageEncoding="UTF-8"%>
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="<c:url value = "/resources/css/programa.css"/>" />
-<link rel="stylesheet" href="<c:url value = "/resources/css/input.css"/>" />
-<link rel="stylesheet" href="<c:url value = "/resources/icons/css/all.css"/>" />
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<!--[if lt IE 9]>
+<link rel="stylesheet"
+	href="<c:url value = "/resources/css/programa.css"/>" />
+<link rel="stylesheet"
+	href="<c:url value = "/resources/css/input.css"/>" />
+<link rel="stylesheet"
+	href="<c:url value = "/resources/icons/css/all.css"/>" />
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
 </head>
 <body>
 	<header>
-		<div class="nome-sistema" onclick="window.location.href = '../home/run'">
-			<i class="fas fa-hotel"></i><p style="margin: 0 0 0 8px;">SISTEMA IMOBILIARIO</p>
+		<div class="nome-sistema"
+			onclick="window.location.href = '../home/run'">
+			<i class="fas fa-hotel"></i>
+			<p style="margin: 0 0 0 8px;">SISTEMA IMOBILIARIO</p>
 		</div>
 		<div class="logo" onclick="window.location.href = '../'">
-			<img src="<c:url value = "/resources/imgs/logo-2.png"/>" alt="Home" class="logo-sistema">
+			<img src="<c:url value = "/resources/imgs/logo-2.png"/>" alt="Home"
+				class="logo-sistema">
 		</div>
 		<!--<i class="fas fa-search"></i>-->
 		<div class="search"></div>
@@ -34,12 +43,12 @@
 		<div class="sub-menu sb-cadastros">
 			<div>
 				<button class="bt-menus"
-					onclick="location.href='../cadastros/imoveis';">Imóveis</button>
+					onclick="location.href='<c:url value = "/cadastros/imoveis"/>';">Imóveis</button>
 				<button class="bt-menus"
-					onclick="location.href='../cadastros/locadores';">
+					onclick="location.href='<c:url value = "/cadastros/locadores"/>';">
 					Locadores</button>
 				<button class="bt-menus"
-					onclick="location.href='../cadastros/locatarios';">
+					onclick="location.href='<c:url value = "/cadastros/locatarios"/>';">
 					Locatários</button>
 
 			</div>
@@ -104,4 +113,3 @@
 
 			</div>
 		</div>
-		

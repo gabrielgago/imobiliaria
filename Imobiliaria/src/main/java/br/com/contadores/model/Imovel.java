@@ -1,5 +1,6 @@
 package br.com.contadores.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Calendar;
 
@@ -12,44 +13,40 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.NumberFormat;
 import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-public class Imovel {
+public class Imovel implements Serializable {
 
 	@Id
 	@GeneratedValue
-	private int id;
-	private int codigo;
+	private Integer id;
+	private Integer codigo;
 	private String descricao;
-	private int codigoProprietario;
+	private Integer codigoProprietario;
 	@OneToOne
 	private Endereco enderecoImovel = new Endereco();
 	@OneToOne
 	private Endereco enderecoCorrespondencia = new Endereco();
-	@Column(scale = 2, precision = 2)
-//	@NumberFormat(pattern = "##.##.##.##,##")
-//	private BigDecimal impostoPredial;
-//	@NumberFormat(pattern = "##.##.##.##,##")
-	private Double impostoPredial;
+	@Column(scale = 2)
+	private BigDecimal impostoPredial;
 	private String numeroApoliceSeguros;
-	private int codigoSegurador;
+	private Integer codigoSegurador;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
 	private Calendar dataVencimento;
-	private int inscricaoCedae;
+	private Integer inscricaoCedae;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
 	private Calendar dataInscricao;
-	private int codigoLogradouro;
+	private Integer codigoLogradouro;
 
-	public int getCodigo() {
+	public Integer getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 
@@ -61,11 +58,11 @@ public class Imovel {
 		this.descricao = descricao;
 	}
 
-	public int getCodigoProprietario() {
+	public Integer getCodigoProprietario() {
 		return codigoProprietario;
 	}
 
-	public void setCodigoProprietario(int codigoProprietario) {
+	public void setCodigoProprietario(Integer codigoProprietario) {
 		this.codigoProprietario = codigoProprietario;
 	}
 
@@ -85,12 +82,12 @@ public class Imovel {
 		this.enderecoCorrespondencia = enderecoCorrespondencia;
 	}
 
-	public Double getImpostoPredial() {
+	public BigDecimal getImpostoPredial() {
 		return impostoPredial;
 	}
 
-	public void setImpostoPredial(Double impostoPredial) {
-		this.impostoPredial = impostoPredial;
+	public void setImpostoPredial(BigDecimal impostoPredial) {
+		this.impostoPredial = impostoPredial.setScale(2, BigDecimal.ROUND_HALF_EVEN);
 	}
 
 	public String getNumeroApoliceSeguros() {
@@ -101,11 +98,11 @@ public class Imovel {
 		this.numeroApoliceSeguros = numeroApoliceSeguros;
 	}
 
-	public int getCodigoSegurador() {
+	public Integer getCodigoSegurador() {
 		return codigoSegurador;
 	}
 
-	public void setCodigoSegurador(int codigoSegurador) {
+	public void setCodigoSegurador(Integer codigoSegurador) {
 		this.codigoSegurador = codigoSegurador;
 	}
 
@@ -117,11 +114,11 @@ public class Imovel {
 		this.dataVencimento = dataVencimento;
 	}
 
-	public int getInscricaoCedae() {
+	public Integer getInscricaoCedae() {
 		return inscricaoCedae;
 	}
 
-	public void setInscricaoCedae(int inscricaoCedae) {
+	public void setInscricaoCedae(Integer inscricaoCedae) {
 		this.inscricaoCedae = inscricaoCedae;
 	}
 
@@ -133,19 +130,19 @@ public class Imovel {
 		this.dataInscricao = dataInscricao;
 	}
 
-	public int getCodigoLogradouro() {
+	public Integer getCodigoLogradouro() {
 		return codigoLogradouro;
 	}
 
-	public void setCodigoLogradouro(int codigoLogradouro) {
+	public void setCodigoLogradouro(Integer codigoLogradouro) {
 		this.codigoLogradouro = codigoLogradouro;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

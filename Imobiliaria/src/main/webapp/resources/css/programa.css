@@ -319,9 +319,10 @@ form {
 	background-color: lightcoral;
 }
 
-/* .bt-cadastro:hover{
-    background: indigo !important; 
-} */
+.tb-cadastros:hover{
+	background-color: powderBlue !important;
+}
+
 @media ( max-width : 1024px) and (min-width: 769px) {
 	.nome-sistema {
 		position: relative;

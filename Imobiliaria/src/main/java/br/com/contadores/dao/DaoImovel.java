@@ -1,6 +1,5 @@
 package br.com.contadores.dao;
 
-import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 import javax.persistence.EntityManager;
@@ -10,25 +9,33 @@ import javax.persistence.Transient;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import br.com.contadores.model.Endereco;
 import br.com.contadores.model.Imovel;
 
-@Repository("DaoImovel")
+@Repository("Dao")
 @Transactional
 public class DaoImovel implements Dao<Imovel> {
 
+	public DaoImovel() {
+	}
+	
 	@PersistenceContext
-	public EntityManager manager;
+	public EntityManager entityManager;
 
 	@Transactional(readOnly = false)
 	@Override
 	public void create(Imovel tipo) {
-		manager.persist(tipo);
+		Endereco enderecoCorrespondencia = tipo.getEnderecoCorrespondencia();
+		Endereco enderecoImovel = tipo.getEnderecoImovel();
+		entityManager.persist(enderecoCorrespondencia);
+		entityManager.persist(enderecoImovel);
+		entityManager.persist(tipo);
 	}
 
 	@Transactional(readOnly = true)
 	@Override
 	public Imovel find(Imovel tipo) {
-		return manager.find(Imovel.class, tipo);
+		return entityManager.find(Imovel.class, tipo.getId());
 	}
 
 	private Object[] buscarCampos(Imovel imovel) {

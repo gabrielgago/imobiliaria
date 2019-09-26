@@ -1,5 +1,7 @@
 package br.com.contadores.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -9,27 +11,25 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-public class Endereco {
+public class Endereco implements Serializable {
 
 	@Id
 	@GeneratedValue
-	private int id;
-	private int cep;
+	private Integer id;
+	private Integer cep;
 	private String rua;
-	private int numero;
+	private Integer numero;
 	private String complemento;
 	private String bairro;
 	private String municipio;
 	private String cidade;
 	private String estado;
-	@OneToOne
-	private Imovel imovel;
 
-	public int getCep() {
+	public Integer getCep() {
 		return cep;
 	}
 
-	public void setCep(int cep) {
+	public void setCep(Integer cep) {
 		this.cep = cep;
 	}
 
@@ -41,11 +41,11 @@ public class Endereco {
 		this.rua = rua;
 	}
 
-	public int getNumero() {
+	public Integer getNumero() {
 		return numero;
 	}
 
-	public void setNumero(int numero) {
+	public void setNumero(Integer numero) {
 		this.numero = numero;
 	}
 
@@ -89,20 +89,12 @@ public class Endereco {
 		this.estado = estado;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	public Imovel getImovel() {
-		return imovel;
-	}
-
-	public void setImovel(Imovel imovel) {
-		this.imovel = imovel;
 	}
 
 }

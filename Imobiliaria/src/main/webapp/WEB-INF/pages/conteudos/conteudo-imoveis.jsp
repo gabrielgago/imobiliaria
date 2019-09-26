@@ -1,5 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<strong class="title">Cadastro de Imóveis</strong><br>
+<strong class="title">Cadastro de Imóveis
+
+</strong>
 <c:if test="${ not empty success }">
 	<div class="msg msg-success">
 	
@@ -14,7 +16,7 @@
 	
 	</div>
 </c:if>
-<form action="../cadastros/cadastrar/imovel" method="POST" >
+<form action='<c:url value = "/cadastros/cadastrar/imovel"/>' method="POST" >
 	<div class="formulario">
 		<table>
 			<tbody>
@@ -55,7 +57,7 @@
 				<tr class="hidden hidden-proprietario">
 					<td class="label">Código</td>
 					<td class="entrada"><input type="number" class="input codigo"
-						name="codigoProprietario" /></td>
+						name="codigoProprietario" value="${ imovel.codigoProprietario }"/></td>
 				</tr>
 				<tr class="hidden hidden-proprietario">
 					<td class="label">CPF</td>
@@ -70,42 +72,43 @@
 				<tr class="hidden hidden-endereco">
 					<td class="label">Cep</td>
 					<td class="entrada"><input type="number" class="input cep"
-						name="enderecoImovel.cep" /></td>
+						name="enderecoImovel.cep" value="${ imovel.enderecoImovel.cep }"/></td>
 				</tr>
 				<tr class="hidden hidden-endereco">
 					<td class="label">Rua</td>
 					<td class="entrada"><input type="text" class="input rua"
-						name="enderecoImovel.rua" /></td>
+						name="enderecoImovel.rua" value="${ imovel.enderecoImovel.rua }"/></td>
 				</tr>
 				<tr class="hidden hidden-endereco">
 					<td class="label">Número</td>
 					<td class="entrada"><input type="text" class="input numero"
-						name="enderecoImovel.numero" /></td>
+						name="enderecoImovel.numero" value="${ imovel.enderecoImovel.numero }"/></td>
 				</tr>
 				<tr class="hidden hidden-endereco">
 					<td class="label">Complemento</td>
 					<td class="entrada"><input type="text"
-						class="input complemento" name="enderecoImovel.complemento" /></td>
+						class="input complemento" name="enderecoImovel.complemento" 
+						value="${ imovel.enderecoImovel.complemento }"/></td>
 				</tr>
 				<tr class="hidden hidden-endereco">
 					<td class="label">Bairro</td>
 					<td class="entrada"><input type="text" class="input bairro"
-						name="enderecoImovel.bairro" /></td>
+						name="enderecoImovel.bairro" value="${ imovel.enderecoImovel.bairro }"/></td>
 				</tr>
 				<tr class="hidden hidden-endereco">
 					<td class="label">Município</td>
 					<td class="entrada"><input type="text" class="input municipio"
-						name="enderecoImovel.municipio" /></td>
+						name="enderecoImovel.municipio" value="${ imovel.enderecoImovel.municipio }"/></td>
 				</tr>
 				<tr class="hidden hidden-endereco">
 					<td class="label">Cidade</td>
 					<td class="entrada"><input type="text" class="input cidade"
-						name="enderecoImovel.cidade" /></td>
+						name="enderecoImovel.cidade" value="${ imovel.enderecoImovel.cidade }"/></td>
 				</tr>
 				<tr class="hidden hidden-endereco">
 					<td class="label">Estado</td>
 					<td class="entrada"><input type="text" class="input estado"
-						name="enderecoImovel.estado" /></td>
+						name="enderecoImovel.estado" value="${ imovel.enderecoImovel.estado }" /></td>
 				</tr>
 				<!--                     Sessao endereco 2 -->
 				<tr class="sub-titulo-tr">
@@ -116,43 +119,43 @@
 				<tr class="hidden hidden-correspondencia">
 					<td class="label">Cep</td>
 					<td class="entrada"><input type="number" class="input cep"
-						name="enderecoCorrespondencia.cep" /></td>
+						name="enderecoCorrespondencia.cep" value="${ imovel.enderecoCorrespondencia.cep }"/></td>
 				</tr>
 				<tr class="hidden hidden-correspondencia">
 					<td class="label">Rua</td>
 					<td class="entrada"><input type="text" class="input rua"
-						name="enderecoCorrespondencia.rua" /></td>
+						name="enderecoCorrespondencia.rua" value="${ imovel.enderecoCorrespondencia.rua }"/></td>
 				</tr>
 				<tr class="hidden hidden-correspondencia">
 					<td class="label">Número</td>
 					<td class="entrada"><input type="text" class="input numero"
-						name="enderecoCorrespondencia.numero" /></td>
+						name="enderecoCorrespondencia.numero" value="${ imovel.enderecoCorrespondencia.numero }"/></td>
 				</tr>
 				<tr class="hidden hidden-correspondencia">
 					<td class="label">Complemento</td>
 					<td class="entrada"><input type="text"
 						class="input complemento"
-						name="enderecoCorrespondencia.complemento" /></td>
+						name="enderecoCorrespondencia.complemento" value="${ imovel.enderecoCorrespondencia.complemento }"/></td>
 				</tr>
 				<tr class="hidden hidden-correspondencia">
 					<td class="label">Bairro</td>
 					<td class="entrada"><input type="text" class="input bairro"
-						name="enderecoCorrespondencia.bairro" /></td>
+						name="enderecoCorrespondencia.bairro" value="${ imovel.enderecoCorrespondencia.bairro }"/></td>
 				</tr>
 				<tr class="hidden hidden-correspondencia">
 					<td class="label">Município</td>
 					<td class="entrada"><input type="text" class="input municipio"
-						name="enderecoCorrespondencia.municipio" /></td>
+						name="enderecoCorrespondencia.municipio" value="${ imovel.enderecoCorrespondencia.municipio }"/></td>
 				</tr>
 				<tr class="hidden hidden-correspondencia">
 					<td class="label">Cidade</td>
 					<td class="entrada"><input type="text" class="input cidade"
-						name="enderecoCorrespondencia.cidade" /></td>
+						name="enderecoCorrespondencia.cidade" value="${ imovel.enderecoCorrespondencia.cidade }"/></td>
 				</tr>
 				<tr class="hidden hidden-correspondencia">
 					<td class="label">Estado</td>
 					<td class="entrada"><input type="text" class="input estado"
-						name="enderecoCorrespondencia.estado" /></td>
+						name="enderecoCorrespondencia.estado" value="${ imovel.enderecoCorrespondencia.estado }"/></td>
 				</tr>
 				<!-- 			sessao outros -->
 				<tr class="sub-titulo-tr">
@@ -162,38 +165,38 @@
 				</tr>
 				<tr class="hidden hidden-outros">
 					<td class="label">Imposto Predial</td>
-					<td class="entrada"><input type="text" class="input codigo"
-						name="impostoPredial" /></td>
+					<td class="entrada"><input type="text" class="input cpf"
+						name="impostoPredial" value="${ imovel.impostoPredial }"/></td>
 				</tr>
 				<tr class="hidden hidden-outros">
 					<td class="label">Apólice de seguro</td>
 					<td class="entrada"><input type="number" class="input cpf"
-						name="numeroApoliceSeguros" /></td>
+						name="numeroApoliceSeguros" value="${ imovel.numeroApoliceSeguros }"/></td>
 				</tr>
 				<tr class="hidden hidden-outros">
 					<td class="label">Segurador</td>
 					<td class="entrada"><input type="number" class="input cpf"
-						name="codigoSegurador" /></td>
+						name="codigoSegurador" value="${ imovel.codigoSegurador }"/></td>
 				</tr>
 				<tr class="hidden hidden-outros">
 					<td class="label">Data vencimento</td>
-					<td class="entrada"><input type="date" class="input cpf"
-						name="dataVencimento" /></td>
+					<td class="entrada"><input type="date" class="input"
+						name="dataVencimento" value="${ imovel.dataVencimento }"/></td>
 				</tr>
 				<tr class="hidden hidden-outros">
 					<td class="label">Inscrição CEDAE</td>
 					<td class="entrada"><input type="number" class="input cpf"
-						name="inscricaoCedae" /></td>
+						name="inscricaoCedae" value="${ imovel.inscricaoCedae }"/></td>
 				</tr>
 				<tr class="hidden hidden-outros">
 					<td class="label">Data</td>
-					<td class="entrada"><input type="date" class="input cpf"
-						name="dataInscricao" /></td>
+					<td class="entrada"><input type="date" class="input"
+						name="dataInscricao" value="${ imovel.dataInscricao }"/></td>
 				</tr>
 				<tr class="hidden hidden-outros">
 					<td class="label">Código Logradouro</td>
 					<td class="entrada"><input type="number" class="input cpf"
-						name="codigoLogradouro" /></td>
+						name="codigoLogradouro" value="${ imovel.codigoLogradouro }"/></td>
 				</tr>
 		</table>
 	</div>
