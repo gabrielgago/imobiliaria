@@ -41,6 +41,15 @@ public class Imovel implements Serializable {
 	@Temporal(TemporalType.DATE)
 	private Calendar dataInscricao;
 	private Integer codigoLogradouro;
+	private boolean alugado;
+
+	public boolean isAlugado() {
+		return alugado;
+	}
+
+	public void setAlugado(boolean alugado) {
+		this.alugado = alugado;
+	}
 
 	public Integer getCodigo() {
 		return codigo;
@@ -153,7 +162,7 @@ public class Imovel implements Serializable {
 				+ enderecoCorrespondencia + ", impostoPredial=" + impostoPredial + ", numeroApoliceSeguros="
 				+ numeroApoliceSeguros + ", codigoSegurador=" + codigoSegurador + ", dataVencimento=" + dataVencimento
 				+ ", inscricaoCedae=" + inscricaoCedae + ", dataInscricao=" + dataInscricao + ", codigoLogradouro="
-				+ codigoLogradouro + "]";
+				+ codigoLogradouro + ", alugado=" + alugado + "]";
 	}
 
 }

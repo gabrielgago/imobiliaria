@@ -1,8 +1,5 @@
 package br.com.contadores.control;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,13 +18,8 @@ public class ConsultasController {
 
 	@GetMapping("/imoveis")
 	public ModelAndView consultarImoveis() {
-		List<Imovel> imoveis = new ArrayList<Imovel>();
-		Imovel imo = new Imovel();
-		imo.setId(3);
-		imo = daoImovel.find(imo);
-		imoveis.add(imo);
 		ModelAndView mv = new ModelAndView("consulta-imoveis");
-		mv.addObject("imoveis", imoveis);
+		mv.addObject("imoveis", daoImovel.findAll());
 		return mv;
 	}
 
