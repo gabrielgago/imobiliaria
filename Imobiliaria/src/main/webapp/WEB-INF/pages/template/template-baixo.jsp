@@ -7,26 +7,16 @@
 		<button>Pdv</button> -->
 		<ul>
 			<li class="gb-h-activo gb-bt-menu gb-bt-menu-cadastro"><button>Cadastros</button></li>
-			<li style="display:none;" class="gb-bt-sub-menu-cadastro">
-			<div>
-				<ul>
-					<li class="gb-h-activo">
-						Imoveis
-					</li>
-					<li class="gb-h-activo">
-						Locadores
-					</li>
-					<li class="gb-h-activo">
-						Locatarios
-					</li>
-					<li class="gb-h-activo">
-						Receitas
-					</li>
-					<li class="gb-h-activo">
-						Despesas
-					</li>
-				</ul>
-			</div>
+			<li style="display: none;" class="gb-bt-sub-menu-cadastro">
+				<div>
+					<ul>
+						<li class="gb-h-activo">Imoveis</li>
+						<li class="gb-h-activo">Locadores</li>
+						<li class="gb-h-activo">Locatarios</li>
+						<li class="gb-h-activo">Receitas</li>
+						<li class="gb-h-activo">Despesas</li>
+					</ul>
+				</div>
 			</li>
 			<li class="gb-h-activo"><button>Relatórios</button></li>
 			<li class="gb-h-activo"><button>Pdv</button></li>

@@ -8,6 +8,12 @@
 	${ success }
 	
 	</div>
+	<script>
+	
+		console.log('sem msg sucesso !');
+		document.getElementById('alert').style.display = 'block';
+	
+	</script>
 </c:if>
 <c:if test="${ not empty error }">
 	<div class="msg msg-error">
@@ -15,6 +21,12 @@
 	${ error }
 	
 	</div>
+	<script>
+	
+		console.log('sem msg sucesso !');
+		document.getElementById('alert').style.display = 'block';
+	
+	</script>
 </c:if>
 <script>
 
