@@ -16,6 +16,16 @@
 	
 	</div>
 </c:if>
+<script>
+
+	function buscaCepSecundario(cep){
+		var cep = JSON.parse(buscaCep(cep));
+		console.log(typeof(cep));
+		console.log(cep);
+	}
+
+
+</script>
 <form action='<c:url value = "/cadastros/cadastrar/imovel"/>' method="POST" >
 	<div class="formulario">
 		<table>
@@ -72,7 +82,7 @@
 				<tr class="hidden hidden-endereco">
 					<td class="label">Cep</td>
 					<td class="entrada"><input type="number" class="input cep"
-						name="enderecoImovel.cep" value="${ imovel.enderecoImovel.cep }"/></td>
+						name="enderecoImovel.cep" value="${ imovel.enderecoImovel.cep }" onblur="buscaCepSecundario(this.value);"/></td>
 				</tr>
 				<tr class="hidden hidden-endereco">
 					<td class="label">Rua</td>

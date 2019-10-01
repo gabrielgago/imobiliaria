@@ -16,11 +16,14 @@
 <link rel="stylesheet"
 	href="<c:url value = "/resources/css/input.css"/>" />
 <link rel="stylesheet"
+	href="<c:url value = "/resources/css/alert.css"/>" />
+<link rel="stylesheet"
 	href="<c:url value = "/resources/icons/css/all.css"/>" />
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
+<script src="<c:url value = "/resources/js/cep.js"/>"></script>
 <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -28,11 +31,9 @@
 <title>Sistema Imobiliario Contadores Home</title>
 <link rel="stylesheet" type="text/css"
 	href="https://necolas.github.io/normalize.css/latest/normalize.css">
-
 </head>
 
 <body>
-
 	<header>
 		<div class="gb-logo">
 			<span>ContadoresHome</span>
@@ -45,4 +46,5 @@
 			<span>Search</span>
 		</div>
 	</header>
+	<%@include file='../content/alert.jsp'%>
 	<div class="gb-conteudo">
