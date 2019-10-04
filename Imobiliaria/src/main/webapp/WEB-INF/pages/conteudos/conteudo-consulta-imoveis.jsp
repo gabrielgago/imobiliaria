@@ -34,8 +34,8 @@
 		</table>
 	</div>
 	<div class="menu-botoes">
+		<button class="bt-menus bt-acoes" onclick="redirect('<c:url value = "/cadastros/imoveis"/>');">Novo</button>
 		<button class="bt-menus bt-acoes">Editar</button>
 		<button class="bt-menus bt-acoes">Excluir</button>
-		<button class="bt-menus bt-acoes">Novo</button>
 	</div>
 </form>

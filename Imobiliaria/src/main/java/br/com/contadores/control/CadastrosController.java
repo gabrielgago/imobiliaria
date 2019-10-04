@@ -25,9 +25,6 @@ public class CadastrosController {
 	@GetMapping("/imoveis")
 	public ModelAndView runCadastroImoveis(Imovel imovel, boolean hasErrors) {
 		ModelAndView mv = new ModelAndView("cadastro-imoveis");
-//		Imovel imo = new Imovel();
-//		imo.setId(3);
-//		int id = daoImovel.find(imo);
 		mv.addObject("imovel", imovel );
 		if(hasErrors)
 			mv.addObject("error", "Houve um erro ao tentar salvar o imóvel de código : " + imovel.getCodigo());

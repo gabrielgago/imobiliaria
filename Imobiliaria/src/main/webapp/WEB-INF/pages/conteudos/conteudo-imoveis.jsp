@@ -3,15 +3,15 @@
 
 </strong>
 <c:if test="${ not empty success }">
-	<div class="msg msg-success">
+<!-- 	<div class="msg msg-success"> -->
 	
-	${ success }
+<%-- 	${ success } --%>
 	
-	</div>
+<!-- 	</div> -->
 	<script>
 	
 		console.log('sem msg sucesso !');
-		document.getElementById('alert').style.display = 'block';
+		jQuery('#alert').fadeIn('1000');
 	
 	</script>
 </c:if>
@@ -24,7 +24,7 @@
 	<script>
 	
 		console.log('sem msg sucesso !');
-		document.getElementById('alert').style.display = 'block';
+		jQuery('#alert').fadeIn('1000');
 	
 	</script>
 </c:if>
@@ -224,6 +224,7 @@
 	</div>
 
 	<div class="menu-botoes">
+		<button type="button" class="bt-menus bt-acoes" onclick="redirect('<c:url value = "/consulta/imoveis"/>');">Imóveis cadastrados</button>
 		<button class="bt-menus bt-acoes">Salvar</button>
 		<button class="bt-menus bt-acoes">Limpar</button>
 		<button class="bt-menus bt-acoes">Cancelar</button>
