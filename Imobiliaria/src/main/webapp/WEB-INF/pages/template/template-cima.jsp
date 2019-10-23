@@ -38,14 +38,15 @@
 <body>
 	<header>
 		<div class="gb-logo">
-			<span>ContadoresHome</span>
+			<span><img alt="" src="<c:url value="/resources/imgs/mercado-pago-logo.png"/>"></span>
 		</div>
-		<nav>
-			<span>Ajuda</span> <span>Home</span> <span
-				style="margin: 0 !important;">Sair</span>
-		</nav>
+<!-- 		<nav> -->
+<!-- 			<span>Ajuda</span> <span>Home</span> <span -->
+<!-- 				style="margin: 0 !important;">Sair</span> -->
+<!-- 		</nav> -->
 		<div class="gb-search">
-			<span>Search</span>
+		<input type="text" placeholder="pesquisar">
+		<i class="fas fa-search"></i>
 		</div>
 	</header>
 	<%@include file='../content/alert.jsp'%>

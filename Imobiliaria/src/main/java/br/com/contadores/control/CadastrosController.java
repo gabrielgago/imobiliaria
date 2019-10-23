@@ -1,13 +1,16 @@
 package br.com.contadores.control;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -29,6 +32,13 @@ public class CadastrosController {
 		if(hasErrors)
 			mv.addObject("error", "Houve um erro ao tentar salvar o imóvel de código : " + imovel.getCodigo());
 		return mv;
+	}
+	
+	@GetMapping("/ws/{valorASomar}/teste")
+	@ResponseBody
+	public String soma(@PathVariable int valorASomar, HttpServletResponse response) {
+		response.setContentType("application/json");
+		return "{\"valor\":\"" + (valorASomar*2) +"\"}";
 	}
 	
 	@PostMapping("/cadastrar/imovel")
