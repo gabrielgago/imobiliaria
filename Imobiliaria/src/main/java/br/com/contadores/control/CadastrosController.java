@@ -34,13 +34,6 @@ public class CadastrosController {
 		return mv;
 	}
 	
-	@GetMapping("/ws/{valorASomar}/teste")
-	@ResponseBody
-	public String soma(@PathVariable int valorASomar, HttpServletResponse response) {
-		response.setContentType("application/json");
-		return "{\"valor\":\"" + (valorASomar*2) +"\"}";
-	}
-	
 	@PostMapping("/cadastrar/imovel")
 	public ModelAndView cadastrarImovel(@Valid Imovel imovel, BindingResult binding, RedirectAttributes redirect) {
 
