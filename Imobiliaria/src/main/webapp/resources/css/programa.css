@@ -60,16 +60,16 @@
 	margin: 0;
 }
 
-footer, header {
-	position: initial;
-	background: #1D1C1D;
-	width: 100%;
-	height: 10%;
-	display: flex !important;
-	color: whitesmoke;
-	justify-content: center;
-	align-items: center;
-}
+/* footer, header { */
+/* 	position: initial; */
+/* 	background: #1D1C1D; */
+/* 	width: 100%; */
+/* 	height: 10%; */
+/* 	display: flex !important; */
+/* 	color: whitesmoke; */
+/* 	justify-content: center; */
+/* 	align-items: center; */
+/* } */
 
 footer {
 	top: 90%;

@@ -38,7 +38,7 @@
 <body>
 	<header>
 		<div class="gb-logo">
-			<span><img alt="" src="<c:url value="/resources/imgs/mercado-pago-logo.png"/>"></span>
+			<span><img alt="" src="<c:url value="/resources/imgs/link.png"/>"></span>
 		</div>
 <!-- 		<nav> -->
 <!-- 			<span>Ajuda</span> <span>Home</span> <span -->

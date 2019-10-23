@@ -6,12 +6,23 @@ header {
 	z-index: 1;
 	/*background: linear-gradient(-164.2deg, #20bfe5, #00729b);*/
 	background: #283E4A;
-	height: 10%; /*52px*/
+	height: 6%; /*52px*/
 }
 
 header .gb-logo img{
-    width: 125px;
-    margin-left: 20px;
+/*     width: 125px; */
+/*     margin-left: 20px; */
+    width: 38px;
+}
+
+header .gb-logo::before{
+	content: "";
+    background-color: white;
+    width: 35px;
+    height: 34px;
+    position: absolute;
+    box-sizing: border-box;
+    z-index: -1;
 }
 
 .gb-conteudo {
@@ -32,8 +43,8 @@ aside {
     box-sizing: border-box;
     box-shadow: -14px 20px 4px 0px rgba(0, 0, 0, 0.2);
     display: flex !important;
-    height: 90%;
-    top: 10%;
+    height: 94%;
+    top: 6%;
     /*background: linear-gradient(-164.2deg, #20bfe5, #00729b);*/
 	background : #283E4A;
 }
