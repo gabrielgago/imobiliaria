@@ -30,6 +30,12 @@ public class CadastrosController {
 			mv.addObject("error", "Houve um erro ao tentar salvar o imóvel de código : " + imovel.getCodigo());
 		return mv;
 	}
+
+	@GetMapping("/locadores")
+	public ModelAndView runCadastroLocadores() {
+		ModelAndView mv = new ModelAndView("cadastro-locadores");
+		return mv;
+	}
 	
 	@PostMapping("/cadastrar/imovel")
 	public ModelAndView cadastrarImovel(@Valid Imovel imovel, BindingResult binding, RedirectAttributes redirect) {
