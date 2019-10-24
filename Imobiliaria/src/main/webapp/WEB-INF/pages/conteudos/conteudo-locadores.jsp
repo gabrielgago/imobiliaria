@@ -1,3 +1,11 @@
+<script>
+	function buscaCepSecundario(cep) {
+		var cep = JSON.parse(buscaCep(cep));
+		console.log(typeof (cep));
+		console.log(cep);
+	}
+</script>
+
 <div class="container-fluid">
 	<h2>Cadastro de Locadores</h2>
 	<hr>
@@ -85,14 +93,14 @@
 			</div>
 			<div class="col">
 				<input type="text" class="form-control"
-					placeholder="Orgão">
+					placeholder="Orgão Emissor">
 			</div>
 			<div class="col">
 				<input type="date" class="form-control" placeholder="Emissão">
 			</div>
 		</div>
 		
-		<label for="inputDocumentacao">Observação</label>
+		<label for="inputDocumentacao">Data de Nascimento</label>
 		<div class="row">
 			<div class="col-4">
 				<input type="date" class="form-control"
@@ -101,10 +109,10 @@
 		</div>
 		
 		<div class="row">
-			<div class="col-3">
+			<div class="col-2">
 				<button type="button" class="btn btn-secondary">Salvar</button>
 			</div>
-			<div class="col-3">
+			<div class="col-2">
 				<button type="button" class="btn btn-secondary">Listar</button>
 			</div>
 		</div>

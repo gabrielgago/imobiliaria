@@ -42,12 +42,12 @@
 			<div class="form-check">
 				<input class="form-check-input" type="radio" name="exampleRadios"
 					id="exampleRadios1" value="option1" checked> <label
-					class="form-check-label" for="exampleRadios1"> Alugado </label>
+					class="form-check-label" for="exampleRadios1"> Alugado&nbsp&nbsp </label>
 			</div>
 			<div class="form-check">
 				<input class="form-check-input" type="radio" name="exampleRadios"
 					id="exampleRadios2" value="option2"> <label
-					class="form-check-label" for="exampleRadios2"> Não Alugado </label>
+					class="form-check-label" for="exampleRadios2"> Não Alugado&nbsp&nbsp&nbsp&nbsp </label>
 			</div>
 		</div>
 		<div class="row">
@@ -99,7 +99,7 @@
 					placeholder="Apolice de seguro">
 			</div>
 			<div class="col">
-				<input type="text" class="form-control" placeholder="Data">
+				<input type="date" class="form-control" placeholder="Data">
 			</div>
 		</div>
 		<div class="row">
@@ -109,7 +109,7 @@
 		</div>
 		<div class="row">
 			<div class="col">
-				<input type="text" class="form-control"
+				<input type="date" class="form-control"
 					placeholder="Data de Vencimento">
 			</div>
 			<div class="col">
