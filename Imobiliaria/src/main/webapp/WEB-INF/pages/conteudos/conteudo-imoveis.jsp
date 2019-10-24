@@ -32,7 +32,6 @@
 	<form action='<c:url value = "/cadastros/cadastrar/imovel"/>'
 		method="POST">
 
-
 		<div class="row">
 			<div class="col">
 				<input type="text" class="form-control" placeholder="Código Imóvel">
@@ -40,8 +39,15 @@
 			<div class="col">
 				<input type="text" class="form-control" placeholder="Locador">
 			</div>
-			<div class="col">
-				<input type="text" class="form-control" placeholder="Alugado">
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="exampleRadios"
+					id="exampleRadios1" value="option1" checked> <label
+					class="form-check-label" for="exampleRadios1"> Alugado </label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="exampleRadios"
+					id="exampleRadios2" value="option2"> <label
+					class="form-check-label" for="exampleRadios2"> Não Alugado </label>
 			</div>
 		</div>
 		<div class="row">
