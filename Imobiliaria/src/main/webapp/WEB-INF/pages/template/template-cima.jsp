@@ -1,6 +1,7 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!------ Include the above in your HEAD tag ---------->
 
 <!DOCTYPE html>
@@ -581,15 +582,15 @@ $("#show-sidebar").click(function() {
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a href="#">Cadastro de Imóveis
+                  <a href="<c:url value = "/cadastros/imoveis"/>">Cadastro de Imóveis
 <!--                     <span class="badge badge-pill badge-success">Pro</span> -->
                   </a>
                 </li>
                 <li>
-                  <a href="#">Cadastro de Locadores</a>
+                  <a href="<c:url value = "/cadastros/locadores"/>">Cadastro de Locadores</a>
                 </li>
                 <li>
-                  <a href="#">Cadastro de Locatarios</a>
+                  <a href="<c:url value = "/cadastros/locatarios"/>">Cadastro de Locatarios</a>
                 </li>
               </ul>
             </div>
