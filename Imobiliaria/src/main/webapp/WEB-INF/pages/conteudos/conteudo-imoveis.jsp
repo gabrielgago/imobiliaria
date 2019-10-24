@@ -32,7 +32,6 @@
 	<form action='<c:url value = "/cadastros/cadastrar/imovel"/>'
 		method="POST">
 
-
 		<div class="row">
 			<div class="col">
 				<input type="text" class="form-control" placeholder="Código Imóvel">
