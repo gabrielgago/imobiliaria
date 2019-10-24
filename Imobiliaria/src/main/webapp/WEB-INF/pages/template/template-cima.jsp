@@ -497,7 +497,10 @@ body {
 .chiller-theme .sidebar-footer>a:last-child {
     border-right: none;
 }
- 	
+ 
+.row{
+    margin-bottom: 15px;
+}
  	</style>
 
 <script type="text/javascript">
