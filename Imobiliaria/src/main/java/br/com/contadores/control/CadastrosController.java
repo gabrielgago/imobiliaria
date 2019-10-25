@@ -49,6 +49,12 @@ public class CadastrosController {
 		return mv;
 	}
 	
+	@GetMapping("/lancamento")
+	public ModelAndView runCadastroLancamento() {
+		ModelAndView mv = new ModelAndView("cadastro-lancamento");
+		return mv;
+	}
+	
 	@PostMapping("/cadastrar/imovel")
 	public ModelAndView cadastrarImovel(@Valid Imovel imovel, BindingResult binding, RedirectAttributes redirect) {
 

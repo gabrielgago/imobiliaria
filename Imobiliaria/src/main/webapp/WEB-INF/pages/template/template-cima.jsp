@@ -33,82 +33,162 @@ keyframes swing { 0% {
 10%
 {
 transform
+
+
 :
+
  
+
 rotate
-(10deg);
+
+
+(10
+deg
+);
+
 
   
+
 }
 30%
 {
 transform
+
+
 :
+
  
+
 rotate
-(0deg);
+
+
+(0
+deg
+);
+
 
   
+
 }
 40%
 {
 transform
+
+
 :
+
  
+
 rotate
-(-10deg);
+
+
+(-10
+deg
+);
+
 
   
+
 }
 50%
 {
 transform
+
+
 :
+
  
+
 rotate
-(0deg);
+
+
+(0
+deg
+);
+
 
   
+
 }
 60%
 {
 transform
+
+
 :
+
  
+
 rotate
-(5deg);
+
+
+(5
+deg
+);
+
 
   
+
 }
 70%
 {
 transform
+
+
 :
+
  
+
 rotate
-(0deg);
+
+
+(0
+deg
+);
+
 
   
+
 }
 80%
 {
 transform
+
+
 :
+
  
+
 rotate
-(-5deg);
+
+
+(-5
+deg
+);
+
 
   
+
 }
 100%
 {
 transform
+
+
 :
+
  
+
 rotate
-(0deg);
+
+
+(0
+deg
+);
+
 
   
+
 }
 }
 @
@@ -120,15 +200,23 @@ keyframes sonar { 0% {
 100%
 {
 transform
-:
- 
-scale
-(2);
 
-    
-opacity
+
 :
+
  
+
+scale
+
+
+(2);
+opacity
+
+
+:
+
+ 
+
 0;
 }
 }
@@ -567,11 +655,10 @@ body {
 	margin-bottom: 15px;
 }
 
-.form-check-input:checked + label{
+.form-check-input:checked+label {
 	color: red;
 	font-weight: bold;
 }
-
 </style>
 
 <script type="text/javascript">
@@ -647,6 +734,8 @@ body {
 											de Locatarios</a></li>
 									<li><a href="<c:url value = "/cadastros/fiadores"/>">Cadastro
 											de Fiadores</a></li>
+									<li><a href="<c:url value = "/cadastros/lancamento"/>">Cadastro
+											de Lançamentos</a></li>
 								</ul>
 							</div></li>
 						<li class="sidebar-dropdown"><a href="#"> <i
