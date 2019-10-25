@@ -42,6 +42,12 @@ public class CadastrosController {
 		ModelAndView mv = new ModelAndView("cadastro-locatarios");
 		return mv;
 	}
+
+	@GetMapping("/fiadores")
+	public ModelAndView runCadastroFiadores() {
+		ModelAndView mv = new ModelAndView("cadastro-fiador");
+		return mv;
+	}
 	
 	@PostMapping("/cadastrar/imovel")
 	public ModelAndView cadastrarImovel(@Valid Imovel imovel, BindingResult binding, RedirectAttributes redirect) {

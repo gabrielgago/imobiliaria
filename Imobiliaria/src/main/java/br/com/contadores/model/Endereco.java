@@ -9,6 +9,9 @@ import javax.persistence.OneToOne;
 
 import org.springframework.stereotype.Component;
 
+import br.com.contadores.model.anotations.Embeddable;
+
+@Embeddable
 @Component
 @Entity
 public class Endereco implements Serializable {

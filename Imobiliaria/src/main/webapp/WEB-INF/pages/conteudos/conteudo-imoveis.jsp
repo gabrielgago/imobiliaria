@@ -34,25 +34,31 @@
 
 		<div class="row">
 			<div class="col">
-				<input type="text" class="form-control" placeholder="Código Imóvel">
+				<input type="text" class="form-control input-label"
+					placeholder="Código Imóvel" id="codigo" name="codigo"
+					value="${imovel.codigo}">
 			</div>
 			<div class="col">
-				<input type="text" class="form-control" placeholder="Locador">
+				<input type="text" class="form-control" placeholder="Locador"
+					name="descricao" value="${imovel.descricao}">
 			</div>
 			<div class="form-check">
 				<input class="form-check-input" type="radio" name="exampleRadios"
-					id="exampleRadios1" value="option1" checked> <label
-					class="form-check-label" for="exampleRadios1"> Alugado&nbsp&nbsp </label>
+					id="exampleRadios1" value="alugado" checked> <label
+					class="form-check-label" for="exampleRadios1">
+					Alugado&nbsp&nbsp </label>
 			</div>
 			<div class="form-check">
 				<input class="form-check-input" type="radio" name="exampleRadios"
-					id="exampleRadios2" value="option2"> <label
-					class="form-check-label" for="exampleRadios2"> Não Alugado&nbsp&nbsp&nbsp&nbsp </label>
+					id="exampleRadios2" value="alugado"> <label
+					class="form-check-label" for="exampleRadios2"> Não
+					Alugado&nbsp&nbsp&nbsp&nbsp </label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col">
-				<input type="text" class="form-control" placeholder="Nome">
+				<input type="text" class="form-control" placeholder="Nome"
+				name="nome" value="${imovel.descricao}">
 			</div>
 		</div>
 		<label for="exampleInputEmail1">Localização</label>
@@ -115,6 +121,15 @@
 			<div class="col">
 				<input type="text" class="form-control"
 					placeholder="Codigo Logradouro">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-2">
+				<button type="button" class="btn btn-secondary">Salvar</button>
+			</div>
+			<div class="col-2">
+				<button type="button" class="btn btn-secondary">Listar</button>
 			</div>
 		</div>
 
