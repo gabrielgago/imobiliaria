@@ -1,97 +1,129 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div class="container-fluid">
-	<h2>Cadastro de Imóveis</h2>
+	<h2>Cadastro de Fiador</h2>
 	<hr>
 
-	<form action='<c:url value = "/cadastros/cadastrar/imovel"/>'
+	<form action='<c:url value = "/cadastros/cadastrar/fiador"/>'
 		method="POST">
 
 		<div class="row">
 			<div class="col">
-				<input type="text" class="form-control input-label"
-					placeholder="Código Imóvel" id="codigo" name="codigo"
-					value="${imovel.codigo}">
+				<input type="text" class="form-control" placeholder="Código Fiador"
+					id="codigo" name="codigoFiador" value="${fiador.codigoFiador}">
 			</div>
-			<div class="col">
-				<input type="text" class="form-control" placeholder="Locador"
-					name="descricao" value="${imovel.descricao}">
-			</div>
-			<select id="opcao1" class="form-control col mr-3">
-				<option selected>Escolher...</option>
-				<option>Alugado</option>
-				<option>Não Alugado</option>
-			</select>
-		</div>
-		<div class="row">
 			<div class="col">
 				<input type="text" class="form-control" placeholder="Nome"
-					name="nome" value="${imovel.descricao}">
+					name="nomeFiador" value="${fiador.nomeFiador}">
+			</div>
+			<div class="col">
+				<input type="date" class="form-control"
+					placeholder="Data de Nascimento" name="dataNascimento"
+					value="${fiador.dataNascimento}">
 			</div>
 		</div>
-		<label for="exampleInputEmail1">Localização</label>
+		<label for="">Localização</label>
 		<div class="row">
 			<div class="col">
-				<input type="text" class="form-control" placeholder="Endereço">
-			</div>
-		</div>
-		<div class="row">
-			<div class="col">
-				<input type="text" class="form-control" placeholder="Bairro">
+				<input type="text" class="form-control" placeholder="Cep"
+					value="${fiador.enderecoResidencial.cep}">
 			</div>
 			<div class="col">
-				<input type="text" class="form-control" placeholder="Cep">
-			</div>
-		</div>
-		<label for="exampleInputEmail1">Correspondência</label>
-		<div class="row">
-			<div class="col">
-				<input type="text" class="form-control" placeholder="Endereço">
+				<input type="number" class="form-control" placeholder="Número"
+					value="${fiador.enderecoResidencial.numero}">
 			</div>
 		</div>
 		<div class="row">
 			<div class="col">
-				<input type="text" class="form-control" placeholder="Bairro">
-			</div>
-			<div class="col">
-				<input type="text" class="form-control" placeholder="Cep">
-			</div>
-		</div>
-		<label for="exampleInputEmail1">Outros</label>
-		<div class="row">
-			<div class="col">
-				<input type="text" class="form-control"
-					placeholder="Imposto Predial">
-			</div>
-			<div class="col">
-				<input type="text" class="form-control" placeholder="Insc. Cedae">
+				<input type="text" class="form-control" placeholder="Logradouro"
+					value="${fiador.enderecoResidencial.lograouro}">
 			</div>
 		</div>
 		<div class="row">
 			<div class="col">
-				<input type="text" class="form-control"
-					placeholder="Apolice de seguro">
+				<input type="text" class="form-control" placeholder="Bairro"
+					value="${fiador.enderecoResidencial.bairro}">
 			</div>
-			<label for="data" class="col-sm-1 col-form-label">Data</label>
 			<div class="col">
-				<input type="date" id="data" class="form-control" placeholder="Data">
+				<input type="text" class="form-control" placeholder="Municipio"
+					value="${fiador.enderecoResidencial.municipio}">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<input type="text" class="form-control" placeholder="Estado"
+					value="${fiador.enderecoResidencial.estado}">
+			</div>
+			<div class="col">
+				<input type="text" class="form-control" placeholder="Complemento"
+					value="${fiador.enderecoResidencial.complemento}">
+			</div>
+		</div>
+		<label for="">Correspondência</label>
+		<div class="row">
+			<div class="col">
+				<input type="text" class="form-control" placeholder="Cep"
+					value="${fiador.enderecoComecial.cep}">
+			</div>
+			<div class="col">
+				<input type="number" class="form-control" placeholder="Número"
+					value="${fiador.enderecoComecial.numero}">
 			</div>
 		</div>
 		<div class="row">
 			<div class="col">
-				<input type="text" class="form-control" placeholder="Segurador">
+				<input type="text" class="form-control" placeholder="Logradouro"
+					value="${fiador.enderecoComecial.lograouro}">
 			</div>
 		</div>
 		<div class="row">
-			<label for="dtVencimento" class="col-sm-2 col-form-label">Data
-				de Vencimento</label>
 			<div class="col">
-				<input type="date" id="dtVencimento" class="form-control"
-					placeholder="Data de Vencimento">
+				<input type="text" class="form-control" placeholder="Bairro"
+					value="${fiador.enderecoComecial.bairro}">
 			</div>
 			<div class="col">
-				<input type="text" class="form-control"
-					placeholder="Codigo Logradouro">
+				<input type="text" class="form-control" placeholder="Municipio"
+					value="${fiador.enderecoComecial.municipio}">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<input type="text" class="form-control" placeholder="Estado"
+					value="${fiador.enderecoComecial.estado}">
+			</div>
+			<div class="col">
+				<input type="text" class="form-control" placeholder="Complemento"
+					value="${fiador.enderecoComecial.complemento}">
+			</div>
+		</div>
+		<label for="">Documentos</label>
+		<div class="row">
+			<div class="col">
+				<input type="text" class="form-control" placeholder="CPF"
+					value="${fiador.documentosFiador.cpf}">
+			</div>
+			<div class="col">
+				<input type="text" class="form-control" placeholder="Identidade"
+					value="${fiador.documentosFiador.registroGeral.registro}">
+			</div>
+			<div class="col">
+				<input type="text" class="form-control" placeholder="Orgão Emissor"
+					value="${fiador.documentosFiador.registroGeral.orgao}">
+			</div>
+			<div class="col">
+				<input type="date" class="form-control"
+					placeholder="Data de Emissão"
+					value="${fiador.documentosFiador.registroGeral.dataEmissao}">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<input type="text" class="form-control" placeholder="Estado Civil"
+					value="${fiador.estadoCivil}">
+			</div>
+			<div class="col">
+				<input type="text" class="form-control" placeholder="Profissão"
+					value="${fiador.profissao.codigo}">
 			</div>
 		</div>
 
