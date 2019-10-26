@@ -42,23 +42,16 @@
 				<input type="text" class="form-control" placeholder="Locador"
 					name="descricao" value="${imovel.descricao}">
 			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="radio" name="exampleRadios"
-					id="exampleRadios1" value="alugado" checked> <label
-					class="form-check-label" for="exampleRadios1">
-					Alugado&nbsp&nbsp </label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="radio" name="exampleRadios"
-					id="exampleRadios2" value="alugado"> <label
-					class="form-check-label" for="exampleRadios2"> Não
-					Alugado&nbsp&nbsp&nbsp&nbsp </label>
-			</div>
+			<select id="opcao1" class="form-control col mr-3">
+				<option selected>Escolher...</option>
+				<option>Alugado</option>
+				<option>Não Alugado</option>
+			</select>
 		</div>
 		<div class="row">
 			<div class="col">
 				<input type="text" class="form-control" placeholder="Nome"
-				name="nome" value="${imovel.descricao}">
+					name="nome" value="${imovel.descricao}">
 			</div>
 		</div>
 		<label for="exampleInputEmail1">Localização</label>
@@ -104,8 +97,9 @@
 				<input type="text" class="form-control"
 					placeholder="Apolice de seguro">
 			</div>
+			<label for="data" class="col-sm-1 col-form-label">Data</label>
 			<div class="col">
-				<input type="date" class="form-control" placeholder="Data">
+				<input type="date" id="data" class="form-control" placeholder="Data">
 			</div>
 		</div>
 		<div class="row">
@@ -114,8 +108,10 @@
 			</div>
 		</div>
 		<div class="row">
+			<label for="dtVencimento" class="col-sm-2 col-form-label">Data
+				de Vencimento</label>
 			<div class="col">
-				<input type="date" class="form-control"
+				<input type="date" id="dtVencimento" class="form-control"
 					placeholder="Data de Vencimento">
 			</div>
 			<div class="col">
