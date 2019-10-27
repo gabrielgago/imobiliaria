@@ -26,6 +26,8 @@ public class CadastrosController {
 	public ModelAndView runCadastroImoveis(Imovel imovel, boolean hasErrors) {
 		ModelAndView mv = new ModelAndView("cadastro-imoveis");
 		mv.addObject("imovel", imovel );
+//		if(dao.findAll()) busca todos os seguradores
+//		mv.addObject("listaSeguradores", null); caso nao venha nada na lista, devolver null para aparecer o bt de cadastro de seguradores.
 		if(hasErrors)
 			mv.addObject("error", "Houve um erro ao tentar salvar o imóvel de código : " + imovel.getCodigo());
 		return mv;
