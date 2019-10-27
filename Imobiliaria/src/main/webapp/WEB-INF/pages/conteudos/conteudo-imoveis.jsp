@@ -1,6 +1,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags/form"%>
 
+<c:if test="${error != null}">
+	<c:out value="${error}"></c:out>
+</c:if>
+
 <div class="container-fluid">
 	<h2>Cadastro de Imóveis</h2>
 	<hr>
