@@ -30,7 +30,8 @@
 		</div>
 
 
-		<c:forEach items="${imovel.enderecos}" var="endereco" varStatus="status">
+		<c:forEach items="${imovel.enderecos}" var="endereco"
+			varStatus="status">
 			<c:if test="${ status.index == 0 }">
 				<label><h5>
 						<p>Localização</p>
@@ -44,43 +45,56 @@
 			<div class="row">
 				<div class="col-sm-3">
 					<s:input type="text" class="form-control" placeholder="Cep"
-						path="enderecos[${status.index}].cep" value="${endereco.cep}" />
+						path="enderecos[${status.index}].cep" value="${endereco.cep}"
+						onblur="buscaCep(this.value,
+						['enderecos${status.index }.cep',
+						'enderecos${status.index }.logradouro',
+						'enderecos${status.index }.complemento',
+						'enderecos${status.index }.bairro',
+						'enderecos${status.index }.cidade',
+						'enderecos${status.index }.estado'] );" />
 				</div>
 				<div class="col-sm-6">
 					<s:input type="text" class="form-control" placeholder="Endereço"
-						path="enderecos[${status.index}].logradouro" value="${endereco.logradouro}" />
+						path="enderecos[${status.index}].logradouro"
+						value="${endereco.logradouro}" />
 				</div>
 				<div class="col-sm-3">
 					<s:input type="text" class="form-control" placeholder="Numero"
-						path="enderecos[${status.index}].numero" value="${endereco.numero}" />
+						path="enderecos[${status.index}].numero"
+						value="${endereco.numero}" />
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-sm-4">
 					<s:input type="text" class="form-control" placeholder="Bairro"
-						path="enderecos[${status.index}].bairro" value="${endereco.bairro}" />
+						path="enderecos[${status.index}].bairro"
+						value="${endereco.bairro}" />
 				</div>
 				<div class="col-sm-4">
 					<s:input type="text" class="form-control" placeholder="Cidade"
-						path="enderecos[${status.index}].cidade" value="${endereco.cidade}" />
+						path="enderecos[${status.index}].cidade"
+						value="${endereco.cidade}" />
 				</div>
 				<div class="col-sm-4">
 					<s:input type="text" class="form-control" placeholder="Estado"
-						path="enderecos[${status.index}].estado" value="${endereco.estado}" />
+						path="enderecos[${status.index}].estado"
+						value="${endereco.estado}" />
 				</div>
 			</div>
 			<div class="row">
 				<div class="col">
 					<s:input type="text" class="form-control" placeholder="Complemento"
-						path="enderecos[${status.index}].complemento" value="${endereco.complemento}" />
+						path="enderecos[${status.index}].complemento"
+						value="${endereco.complemento}" />
 				</div>
 			</div>
 		</c:forEach>
 
 
 		<label><h5>
-						<p>Outros</p>
-					</h5></label>
+				<p>Outros</p>
+			</h5></label>
 		<div class="row">
 			<div class="col">
 				<s:input type="text" class="form-control"
@@ -118,16 +132,19 @@
 		</div>
 		<div class="row">
 			<div class="col">
-				<s:select id="seguradores" class="form-control col mr-3" path="codigoSegurador">
+				<s:select id="seguradores" class="form-control col mr-3"
+					path="codigoSegurador">
 					<option value="-1">Não há seguradores cadastrados</option>
-						<c:forEach items="${listaSeguradores}" var="segurador" varStatus="status">
-							<option value="${segurador.codigo}">${segurador.nome}</option>
-						</c:forEach>
+					<c:forEach items="${listaSeguradores}" var="segurador"
+						varStatus="status">
+						<option value="${segurador.codigo}">${segurador.nome}</option>
+					</c:forEach>
 				</s:select>
 			</div>
 			<c:if test="${listaSeguradores == null}">
 				<div class="col">
-					<button type="button" class="btn btn-secondary">Cadastrar Seguradores</button>
+					<button type="button" class="btn btn-secondary">Cadastrar
+						Seguradores</button>
 				</div>
 			</c:if>
 		</div>
