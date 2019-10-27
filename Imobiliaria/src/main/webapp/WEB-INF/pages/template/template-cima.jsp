@@ -725,7 +725,7 @@ body {
 						</a>
 							<div class="sidebar-submenu">
 								<ul>
-									<li><a href="<c:url value = "/cadastros/imoveis"/>">Cadastro
+									<li><a href="<c:url value = "/imovel/formulario"/>">Cadastro
 											de Imóveis <!--                     <span class="badge badge-pill badge-success">Pro</span> -->
 									</a></li>
 									<li><a href="<c:url value = "/cadastros/locadores"/>">Cadastro

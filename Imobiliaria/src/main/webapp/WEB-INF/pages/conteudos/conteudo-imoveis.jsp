@@ -5,12 +5,12 @@
 	<h2>Cadastro de Imóveis</h2>
 	<hr>
 
-	<s:form action="/cadastros/cadastrar/imovel" method="POST"
+	<s:form action="cadastrar" method="POST"
 		modelAttribute="imovel">
 
 		<div class="row">
 			<div class="col">
-				<s:input type="text" class="form-control input-label"
+				<s:input type="number" class="form-control input-label"
 					placeholder="Código Imóvel" id="codigo" path="codigo" />
 			</div>
 			<div class="col">
@@ -44,7 +44,7 @@
 			</c:if>
 			<div class="row">
 				<div class="col-sm-3">
-					<s:input type="text" class="form-control" placeholder="Cep"
+					<s:input type="number" class="form-control" placeholder="Cep"
 						path="enderecos[${status.index}].cep" value="${endereco.cep}"
 						onblur="buscaCep(this.value,
 						['enderecos${status.index }.cep',
@@ -60,7 +60,7 @@
 						value="${endereco.logradouro}" />
 				</div>
 				<div class="col-sm-3">
-					<s:input type="text" class="form-control" placeholder="Numero"
+					<s:input type="number" class="form-control" placeholder="Numero"
 						path="enderecos[${status.index}].numero"
 						value="${endereco.numero}" />
 				</div>
@@ -97,7 +97,7 @@
 			</h5></label>
 		<div class="row">
 			<div class="col">
-				<s:input type="text" class="form-control"
+				<s:input type="number" class="form-control"
 					placeholder="Codigo Logradouro" path="codigoLogradouro" />
 			</div>
 			<label for="dtVencimento" class="col-sm-2 col-form-label">Data
@@ -110,17 +110,17 @@
 		<div class="row">
 			<div class="col">
 				<s:input type="text" class="form-control"
-					placeholder="Imposto Predial" path="impostoPredial" />
+					placeholder="Imposto Predial" path="impostoPredial" onblur="this.value = this.value.replace(',', '.');" />
 			</div>
 			<div class="col">
-				<s:input type="text" class="form-control" placeholder="Insc. Cedae"
+				<s:input type="number" class="form-control" placeholder="Insc. Cedae"
 					path="inscricaoCedae" />
 			</div>
 			<!-- 			dataInscricao -->
 		</div>
 		<div class="row">
 			<div class="col">
-				<s:input type="text" class="form-control"
+				<s:input type="number" class="form-control"
 					placeholder="Apolice de seguro" path="numeroApoliceSeguros" />
 			</div>
 			<label for="data" class="col-sm-2 col-form-label">Data de
@@ -151,10 +151,10 @@
 
 		<div class="row">
 			<div class="col-2">
-				<button type="button" class="btn btn-secondary">Salvar</button>
+				<button type="submit" class="btn btn-secondary">Salvar</button>
 			</div>
 			<div class="col-2">
-				<button type="button" class="btn btn-secondary">Listar</button>
+				<a href="#" class="btn btn-secondary">Listar</a>
 			</div>
 		</div>
 

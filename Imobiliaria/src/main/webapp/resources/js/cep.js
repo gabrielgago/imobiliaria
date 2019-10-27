@@ -6,7 +6,6 @@ function buscaCep(numero, arr){
 	jQuery.ajax({
 		  url: "http://viacep.com.br/ws/" + String(numero) + "/json/",
 		}).done(function(retorno) {
-			document.getElementById(arr[0]).value = retorno.cep;
 			document.getElementById(arr[1]).value = retorno.logradouro;
 			document.getElementById(arr[2]).value = retorno.complemento;
 			document.getElementById(arr[3]).value = retorno.bairro;
