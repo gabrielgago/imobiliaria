@@ -2,31 +2,40 @@ package br.com.contadores.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 
 import org.springframework.stereotype.Component;
 
 import br.com.contadores.model.anotations.Embeddable;
 
-@Embeddable
 @Component
 @Entity
 public class Endereco implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4103429793962566372L;
 	@Id
 	@GeneratedValue
 	private Integer id;
+	@Column(length = 100, unique = true, nullable = false)
 	private Integer cep;
-	private String rua;
+	private String logradouro;
+	@Column(length = 100)
 	private Integer numero;
 	private String complemento;
 	private String bairro;
 	private String municipio;
 	private String cidade;
 	private String estado;
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	private Imovel imovel;
 
 	public Integer getCep() {
 		return cep;
@@ -36,12 +45,20 @@ public class Endereco implements Serializable {
 		this.cep = cep;
 	}
 
-	public String getRua() {
-		return rua;
+	public String getLogradouro() {
+		return logradouro;
 	}
 
-	public void setRua(String rua) {
-		this.rua = rua;
+	public void setLogradouro(String logradouro) {
+		this.logradouro = logradouro;
+	}
+
+	public Imovel getImovel() {
+		return imovel;
+	}
+
+	public void setImovel(Imovel imovel) {
+		this.imovel = imovel;
 	}
 
 	public Integer getNumero() {

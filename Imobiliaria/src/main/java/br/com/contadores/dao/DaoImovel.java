@@ -27,10 +27,11 @@ public class DaoImovel implements Dao<Imovel> {
 	@Transactional(readOnly = false)
 	@Override
 	public void create(Imovel tipo) {
-		Endereco enderecoCorrespondencia = tipo.getEnderecoCorrespondencia();
-		Endereco enderecoImovel = tipo.getEnderecoImovel();
-		entityManager.persist(enderecoCorrespondencia);
-		entityManager.persist(enderecoImovel);
+//		List<Endereco> enderecos = tipo.getEnderecos();
+//		Endereco enderecoCorrespondencia = tipo.getEnderecoCorrespondencia();
+//		Endereco enderecoImovel = tipo.getEnderecoImovel();
+//		entityManager.persist(enderecoCorrespondencia);
+//		entityManager.persist(enderecoImovel);
 		entityManager.persist(tipo);
 	}
 

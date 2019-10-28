@@ -2,28 +2,16 @@ package br.com.contadores.model;
 
 import java.util.Calendar;
 
-import br.com.contadores.model.anotations.Embedded;
-import br.com.contadores.model.anotations.Input;
-import br.com.contadores.model.anotations.Title;
 import br.com.contadores.model.interfaces.Drawable;
 
-@Title(name = "Cadastro de Fiador")
-public class Fiador implements Drawable{
+public class Fiador implements Drawable {
 
-	@Input(row = true, col = true, numberRow = 1, numberCol = 1, type = "number", classs = {
-			"form-control" }, placeholder = "Código Fiador", id = "codFiador", value = "${imovel.codigoFiador}")
+	private static final long serialVersionUID = 1L;
 	private int codigoFiador;
-	@Input(row = true, col = true, numberRow = 1, numberCol = 2, type = "text", classs = {
-			"form-control" }, placeholder = "Nome Fiador", id = "nomeFiador", value = "${imovel.nomeFiador}")
 	private String nomeFiador;
-	@Embedded
 	private Endereco enderecoComecial;
-	@Embedded
 	private Endereco enderecoResidencial;
-	@Embedded
 	private Documentos documentosFiador;
-	@Input(row = true, col = true, numberRow = 2, numberCol = 1, type = "date", classs = {
-			"form-control" }, placeholder = "Data de Nascimento", id = "dataNascimento", value = "${imovel.dataNascimento}")
 	private Calendar dataNascimento;
 
 	public int getCodigoFiador() {
