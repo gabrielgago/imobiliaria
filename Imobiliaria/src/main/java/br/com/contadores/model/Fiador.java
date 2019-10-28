@@ -1,18 +1,40 @@
 package br.com.contadores.model;
 
+import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Calendar;
+import java.util.List;
 
-import br.com.contadores.model.interfaces.Drawable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
-public class Fiador implements Drawable {
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.stereotype.Component;
 
-	private static final long serialVersionUID = 1L;
+@Component
+@Entity
+public class Fiador implements Serializable {
+
+	private static final long serialVersionUID = 6100586324253265106L;
+
+	@Id
+	@GeneratedValue
 	private int codigoFiador;
+
 	private String nomeFiador;
-	private Endereco enderecoComecial;
-	private Endereco enderecoResidencial;
+	private List<Endereco> enderecos;
 	private Documentos documentosFiador;
-	private Calendar dataNascimento;
+
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@Temporal(TemporalType.DATE)
+	private Calendar dtNascimento;
+
+	{
+		enderecos.addAll(Arrays.asList(new Endereco[] { new Endereco(), new Endereco() }));
+	}
 
 	public int getCodigoFiador() {
 		return codigoFiador;
@@ -30,20 +52,12 @@ public class Fiador implements Drawable {
 		this.nomeFiador = nomeFiador;
 	}
 
-	public Endereco getEnderecoComecial() {
-		return enderecoComecial;
+	public List<Endereco> getEnderecos() {
+		return enderecos;
 	}
 
-	public void setEnderecoComecial(Endereco enderecoComecial) {
-		this.enderecoComecial = enderecoComecial;
-	}
-
-	public Endereco getEnderecoResidencial() {
-		return enderecoResidencial;
-	}
-
-	public void setEnderecoResidencial(Endereco enderecoResidencial) {
-		this.enderecoResidencial = enderecoResidencial;
+	public void setEnderecos(List<Endereco> enderecos) {
+		this.enderecos = enderecos;
 	}
 
 	public Documentos getDocumentosFiador() {
@@ -54,12 +68,12 @@ public class Fiador implements Drawable {
 		this.documentosFiador = documentosFiador;
 	}
 
-	public Calendar getDataNascimento() {
-		return dataNascimento;
+	public Calendar getDtNascimento() {
+		return dtNascimento;
 	}
 
-	public void setDataNascimento(Calendar dataNascimento) {
-		this.dataNascimento = dataNascimento;
+	public void setDtNascimento(Calendar dtNascimento) {
+		this.dtNascimento = dtNascimento;
 	}
 
 	@Override
