@@ -8,7 +8,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 
 import org.springframework.stereotype.Component;
@@ -17,31 +16,34 @@ import org.springframework.stereotype.Component;
 @Entity
 public class Endereco implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 4103429793962566372L;
+
 	@Id
 	@GeneratedValue
 	private Integer id;
-	@Column(length = 100, unique = true, nullable = false)
+
+	@Column(length = 100, nullable = true)
 	private Integer cep;
-	private String logradouro;
+
 	@Column(length = 100)
 	private Integer numero;
+
+	private String estado;
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@Column(nullable = true)
+	@JoinColumn(referencedColumnName = "id", name = "rel_imovel_endereco", nullable = true)
+	private Imovel imovel;
+
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@Column(nullable = true)
+	@JoinColumn(referencedColumnName = "codigoFiador", name = "rel_fiador_endereco_correspondecia", nullable = true)
+	private Fiador fiador;
+
+	private String logradouro;
 	private String complemento;
 	private String bairro;
 	private String municipio;
 	private String cidade;
-	private String estado;
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@JoinColumns(value = { @JoinColumn(referencedColumnName = "id", name = "rel_imovel_endereco"),
-			@JoinColumn(referencedColumnName = "id", name = "rel_imovel_endereco_correspondecia") })
-	private Imovel imovel;
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@JoinColumns(value = { @JoinColumn(referencedColumnName = "codigoFiador", name = "rel_fiador_endereco"),
-			@JoinColumn(referencedColumnName = "codigoFiador", name = "rel_fiador_endereco_correspondecia") })
-	private Fiador fiador;
 
 	public Integer getCep() {
 		return cep;

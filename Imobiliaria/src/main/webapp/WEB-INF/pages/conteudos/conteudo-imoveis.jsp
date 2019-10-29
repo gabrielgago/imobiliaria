@@ -2,7 +2,7 @@
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags/form"%>
 
 <c:if test="${error != null}">
-	<div class="alert alert-warning alert-dismissible fade show"
+	<div class="alert alert-danger alert-dismissible fade show"
 		role="alert">
 		<strong><c:out value="${error}"></c:out></strong> <c:out value="${errorDetails}"></c:out>
 		<button type="button" class="close" data-dismiss="alert"
@@ -27,11 +27,12 @@
 				<s:input type="text" class="form-control" placeholder="Locador"
 					path="descricao" />
 			</div>
-			<s:select id="opcao1" class="form-control col mr-3" path="alugado">
-				<c:forEach items="${statusImovel}" var="status">
-					<option><c:out value="${status.descricao}"></c:out></option>
-				</c:forEach>
+			<s:select id="alugado" class="form-control col mr-3" path="alugado">
+				<s:options items="${statusImovel}" itemLabel="descricao" /> 
 			</s:select>
+<%-- 				<c:forEach items="${statusImovel}" var="status"> --%>
+<%-- 					<option><c:out value="${status.descricao}"></c:out></option> --%>
+<%-- 				</c:forEach> --%>
 		</div>
 		<div class="row">
 			<div class="col">
