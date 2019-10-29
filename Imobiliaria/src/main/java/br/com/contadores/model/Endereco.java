@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 
 import org.springframework.stereotype.Component;
@@ -33,7 +35,12 @@ public class Endereco implements Serializable {
 	private String cidade;
 	private String estado;
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@JoinColumns(value = { @JoinColumn(referencedColumnName = "id", name = "rel_imovel_endereco"),
+			@JoinColumn(referencedColumnName = "id", name = "rel_imovel_endereco_correspondecia") })
 	private Imovel imovel;
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@JoinColumns(value = { @JoinColumn(referencedColumnName = "codigoFiador", name = "rel_fiador_endereco"),
+			@JoinColumn(referencedColumnName = "codigoFiador", name = "rel_fiador_endereco_correspondecia") })
 	private Fiador fiador;
 
 	public Integer getCep() {

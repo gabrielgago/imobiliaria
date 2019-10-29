@@ -1,4 +1,4 @@
-package br.com.contadores.dao;
+package br.com.contadores.dao.interfaces;
 
 import java.io.Serializable;
 import java.util.List;

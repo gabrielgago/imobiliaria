@@ -35,160 +35,320 @@ keyframes swing { 0% {
 transform
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 rotate
 
 
+
+
+
+
+
+
 (10
 deg
+
+
+
+
+
+
 );
-
-
-  
-
 }
 30%
 {
 transform
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 rotate
 
 
+
+
+
+
+
+
 (0
 deg
+
+
+
+
+
+
 );
-
-
-  
-
 }
 40%
 {
 transform
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 rotate
 
 
+
+
+
+
+
+
 (-10
 deg
+
+
+
+
+
+
 );
-
-
-  
-
 }
 50%
 {
 transform
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 rotate
 
 
+
+
+
+
+
+
 (0
 deg
+
+
+
+
+
+
 );
-
-
-  
-
 }
 60%
 {
 transform
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 rotate
 
 
+
+
+
+
+
+
 (5
 deg
+
+
+
+
+
+
 );
-
-
-  
-
 }
 70%
 {
 transform
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 rotate
 
 
+
+
+
+
+
+
 (0
 deg
+
+
+
+
+
+
 );
-
-
-  
-
 }
 80%
 {
 transform
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 rotate
 
 
+
+
+
+
+
+
 (-5
 deg
+
+
+
+
+
+
 );
-
-
-  
-
 }
 100%
 {
 transform
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 rotate
 
 
+
+
+
+
+
+
 (0
 deg
+
+
+
+
+
+
 );
-
-
-  
-
 }
 }
 @
@@ -202,20 +362,50 @@ keyframes sonar { 0% {
 transform
 
 
+
+
+
+
+
+
 :
+
+
+
 
  
 
+
+
+
 scale
+
+
+
+
+
+
 
 
 (2);
 opacity
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 0;
 }
@@ -655,10 +845,7 @@ body {
 	margin-bottom: 15px;
 }
 
-.form-check-input:checked+label {
-	color: red;
-	font-weight: bold;
-}
+
 </style>
 
 <script type="text/javascript">
@@ -689,6 +876,7 @@ body {
 </head>
 
 <body>
+
 	<div class="page-wrapper chiller-theme toggled">
 		<a id="show-sidebar" class="btn btn-sm btn-dark" href="#"> <i
 			class="fas fa-bars"></i>

@@ -2,10 +2,20 @@ package br.com.contadores.model;
 
 import java.util.Calendar;
 
+import javax.persistence.Embeddable;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+@Embeddable
 public class RegistroGeral {
-	public String rg;
-	public String orgaoEmissor;
-	public Calendar dataEmissao;
+	
+	private String rg;
+	private String orgaoEmissor;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@Temporal(TemporalType.DATE)
+	private Calendar dataEmissao;
 
 	public RegistroGeral() {
 	}

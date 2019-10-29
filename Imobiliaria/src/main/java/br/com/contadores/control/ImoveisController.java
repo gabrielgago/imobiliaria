@@ -14,8 +14,10 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.contadores.control.interfaces.Controlador;
-import br.com.contadores.dao.Dao;
+import br.com.contadores.dao.interfaces.Dao;
+import br.com.contadores.model.Endereco;
 import br.com.contadores.model.Imovel;
+import br.com.contadores.model.StatusImovel;
 
 @Controller
 @RequestMapping("/imovel")
@@ -29,10 +31,13 @@ public class ImoveisController implements Controlador<Imovel> {
 	public ModelAndView carregarFormulario(Imovel imovel, BindingResult results) {
 		ModelAndView mv = new ModelAndView("cadastro-imoveis");
 		mv.addObject("imovel", imovel);
+		mv.addObject("statusImovel", StatusImovel.values());
 //		if(dao.findAll()) busca todos os seguradores
 //		mv.addObject("listaSeguradores", null); caso nao venha nada na lista, devolver null para aparecer o bt de cadastro de seguradores.
-		if (results.hasErrors())
+		if (results.hasErrors()) {
 			mv.addObject("error", "Houve um erro ao tentar salvar o imóvel de código : " + imovel.getCodigo());
+			mv.addObject("errorDetails", "Parâmetros enviados na requisição não deram match com os atributos do modelo. Favor verificar o formulário !");
+		}
 		return mv;
 	}
 
@@ -43,7 +48,7 @@ public class ImoveisController implements Controlador<Imovel> {
 			return carregarFormulario(imovel, binding);
 
 		try {
-			imovel.getEnderecos().forEach((e) -> e.setImovel(imovel));
+			imovel.getEnderecos().forEach(e -> e.setImovel(imovel));
 			daoImovel.create(imovel);
 			redirect.addFlashAttribute("success",
 					"Imóvel salvo com sucesso ! Imóvel de código : " + imovel.getCodigo());
