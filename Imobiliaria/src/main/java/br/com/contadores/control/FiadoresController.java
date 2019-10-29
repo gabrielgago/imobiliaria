@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.contadores.control.interfaces.Controlador;
-import br.com.contadores.dao.Dao;
+import br.com.contadores.dao.interfaces.Dao;
 import br.com.contadores.model.Fiador;
 
 @Controller

@@ -9,6 +9,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -38,22 +39,21 @@ public class Imovel implements Serializable {
 	private Integer codigoSegurador;
 	private Integer inscricaoCedae;
 	private Integer codigoLogradouro;
-	private String alugado;
-	
+	@Enumerated
+	private StatusImovel alugado = StatusImovel.DISPONIVEL_LOCACAO;
+
 	@Column(scale = 2)
 	private BigDecimal impostoPredial;
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
 	private Calendar dataInscricao;
-	
+
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
 	private Calendar dataVencimentoApoliceSeguro;
-	
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumns(value = { @JoinColumn(referencedColumnName = "id", name = "rel_imovel_endereco"),
-			@JoinColumn(referencedColumnName = "id", name = "rel_imovel_endereco_correspondecia") })
+
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="imovel")
 	private List<Endereco> enderecos = new ArrayList<Endereco>();
 
 	{
@@ -69,11 +69,11 @@ public class Imovel implements Serializable {
 		this.dataVencimentoApoliceSeguro = dataVencimentoApoliceSeguro;
 	}
 
-	public String getAlugado() {
+	public StatusImovel getAlugado() {
 		return alugado;
 	}
 
-	public void setAlugado(String alugado) {
+	public void setAlugado(StatusImovel alugado) {
 		this.alugado = alugado;
 	}
 

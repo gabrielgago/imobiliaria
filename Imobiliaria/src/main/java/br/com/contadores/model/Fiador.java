@@ -1,13 +1,18 @@
 package br.com.contadores.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -23,11 +28,11 @@ public class Fiador implements Serializable {
 	@Id
 	@GeneratedValue
 	private int codigoFiador;
-
 	private String nomeFiador;
-	private List<Endereco> enderecos;
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="fiador")
+	private List<Endereco> enderecos = new ArrayList<Endereco>();
+	@OneToOne(fetch=FetchType.LAZY, orphanRemoval=true, cascade=CascadeType.ALL, mappedBy="fiador")
 	private Documentos documentosFiador;
-
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
 	private Calendar dtNascimento;

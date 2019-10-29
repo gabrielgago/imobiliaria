@@ -2,12 +2,13 @@
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags/form"%>
 
 <c:if test="${error != null}">
-	<div class="caixa-msg">
-		<div id="cortina" class="cortina"></div>
-		<div class="info-error">
-			<p class="info-error-title"><c:out value="${error}"></c:out></p>
-			<p class="info-error-details"><c:out value="${errorDetails}"></c:out></p>
-		</div>
+	<div class="alert alert-warning alert-dismissible fade show"
+		role="alert">
+		<strong><c:out value="${error}"></c:out></strong> <c:out value="${errorDetails}"></c:out>
+		<button type="button" class="close" data-dismiss="alert"
+			aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
 	</div>
 </c:if>
 
@@ -15,8 +16,7 @@
 	<h2>Cadastro de Imóveis</h2>
 	<hr>
 
-	<s:form action="cadastrar" method="POST"
-		modelAttribute="imovel">
+	<s:form action="cadastrar" method="POST" modelAttribute="imovel">
 
 		<div class="row">
 			<div class="col">
@@ -28,8 +28,9 @@
 					path="descricao" />
 			</div>
 			<s:select id="opcao1" class="form-control col mr-3" path="alugado">
-				<option>Alugado</option>
-				<option selected>Não Alugado</option>
+				<c:forEach items="${statusImovel}" var="status">
+					<option><c:out value="${status.descricao}"></c:out></option>
+				</c:forEach>
 			</s:select>
 		</div>
 		<div class="row">
@@ -120,11 +121,12 @@
 		<div class="row">
 			<div class="col">
 				<s:input type="text" class="form-control"
-					placeholder="Imposto Predial" path="impostoPredial" onblur="this.value = this.value.replace(',', '.');" />
+					placeholder="Imposto Predial" path="impostoPredial"
+					onblur="this.value = this.value.replace(',', '.');" />
 			</div>
 			<div class="col">
-				<s:input type="number" class="form-control" placeholder="Insc. Cedae"
-					path="inscricaoCedae" />
+				<s:input type="number" class="form-control"
+					placeholder="Insc. Cedae" path="inscricaoCedae" />
 			</div>
 			<!-- 			dataInscricao -->
 		</div>
@@ -133,8 +135,8 @@
 				<s:input type="number" class="form-control"
 					placeholder="Apolice de seguro" path="numeroApoliceSeguros" />
 			</div>
-			<label for="data" class="col-sm-2 col-form-label text-right">Data de
-				Venc.</label>
+			<label for="data" class="col-sm-2 col-form-label text-right">Data
+				de Venc.</label>
 			<div class="col">
 				<s:input type="date" id="data" class="form-control"
 					placeholder="Data" path="dataVencimentoApoliceSeguro" />

@@ -4,5 +4,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/x
  <persistence-unit name="spring-jpa-unit">
  	<class>br.com.contadores.model.Imovel</class>
  	<class>br.com.contadores.model.Endereco</class>
+ 	<class>br.com.contadores.model.Documentos</class>
+ 	<class>br.com.contadores.model.Fiador</class>
  </persistence-unit>
 </persistence>
