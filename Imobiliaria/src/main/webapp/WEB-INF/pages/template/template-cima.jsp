@@ -35,160 +35,320 @@ keyframes swing { 0% {
 transform
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 rotate
 
 
+
+
+
+
+
+
 (10
 deg
+
+
+
+
+
+
 );
-
-
-  
-
 }
 30%
 {
 transform
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 rotate
 
 
+
+
+
+
+
+
 (0
 deg
+
+
+
+
+
+
 );
-
-
-  
-
 }
 40%
 {
 transform
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 rotate
 
 
+
+
+
+
+
+
 (-10
 deg
+
+
+
+
+
+
 );
-
-
-  
-
 }
 50%
 {
 transform
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 rotate
 
 
+
+
+
+
+
+
 (0
 deg
+
+
+
+
+
+
 );
-
-
-  
-
 }
 60%
 {
 transform
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 rotate
 
 
+
+
+
+
+
+
 (5
 deg
+
+
+
+
+
+
 );
-
-
-  
-
 }
 70%
 {
 transform
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 rotate
 
 
+
+
+
+
+
+
 (0
 deg
+
+
+
+
+
+
 );
-
-
-  
-
 }
 80%
 {
 transform
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 rotate
 
 
+
+
+
+
+
+
 (-5
 deg
+
+
+
+
+
+
 );
-
-
-  
-
 }
 100%
 {
 transform
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 rotate
 
 
+
+
+
+
+
+
 (0
 deg
+
+
+
+
+
+
 );
-
-
-  
-
 }
 }
 @
@@ -202,20 +362,50 @@ keyframes sonar { 0% {
 transform
 
 
+
+
+
+
+
+
 :
+
+
+
 
  
 
+
+
+
 scale
+
+
+
+
+
+
 
 
 (2);
 opacity
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 0;
 }
@@ -659,6 +849,94 @@ body {
 	color: red;
 	font-weight: bold;
 }
+
+.cortina{
+	transition: 2s
+}
+
+.info-error {
+	background: salmon;
+	width: 100%;
+	height: 10%;
+	display: block;
+	border-radius: 7px;
+	font-family: sans-serif;
+	color: white;
+	text-align: center;
+}
+
+.caixa-msg {
+	transition: all 2s
+}
+
+.info-error {
+	transition: 2s
+}
+
+.caixa-msg:hover #cortina {
+	background: #ccc;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	margin: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	opacity: 0.3;
+}
+
+.caixa-msg:hover {
+	top: 50%;
+	position: absolute;
+	left: 40%;
+	width: 40%;
+	height: 2360px;
+	animation-name: fade-out;
+  	animation-duration: 4s;
+}
+
+.caixa-msg:hover .info-error {
+	z-index: 2;
+	position: relative;
+}
+
+.info-error p:nth-child(1) {
+	font-size: large;
+	margin: 0;
+	height: 100%;
+	top: 19%;
+	position: relative;
+	width: 100%;
+}
+
+.info-error p:nth-child(2) {
+	font-size: smaller;
+	margin: 0;
+	display: none;
+}
+
+@keyframes fade-out {
+
+  0%   {position: absolute;top:10%;width: 10%;height: 3%;}
+  25%  {top:10%;width: 10%;height: 3%;}
+  50%  {top:10%;width: 10%;height: 3%;}
+  100% {top:50%;width: 40%;height: 2360px;}
+
+from {
+	 	width: 100%;
+		height: 10%;
+	}
+
+to {
+		top: 50%;
+		position: absolute; left : 40%; width : 40%;
+		height: 2360px;
+		left: 40%;
+		width: 40%;
+	}
+}
 </style>
 
 <script type="text/javascript">
@@ -689,6 +967,7 @@ body {
 </head>
 
 <body>
+
 	<div class="page-wrapper chiller-theme toggled">
 		<a id="show-sidebar" class="btn btn-sm btn-dark" href="#"> <i
 			class="fas fa-bars"></i>

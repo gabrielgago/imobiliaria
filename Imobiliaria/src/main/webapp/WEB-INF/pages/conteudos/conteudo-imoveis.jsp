@@ -2,7 +2,13 @@
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags/form"%>
 
 <c:if test="${error != null}">
-	<c:out value="${error}"></c:out>
+	<div class="caixa-msg">
+		<div id="cortina" class="cortina"></div>
+		<div class="info-error">
+			<p class="info-error-title"><c:out value="${error}"></c:out></p>
+			<p class="info-error-details"><c:out value="${errorDetails}"></c:out></p>
+		</div>
+	</div>
 </c:if>
 
 <div class="container-fluid">
