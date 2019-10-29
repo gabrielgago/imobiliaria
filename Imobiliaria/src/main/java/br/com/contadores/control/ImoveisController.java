@@ -32,7 +32,7 @@ public class ImoveisController implements Controlador<Imovel> {
 		mv.addObject("imovel", imovel);
 //		if(dao.findAll()) busca todos os seguradores
 //		mv.addObject("listaSeguradores", null); caso nao venha nada na lista, devolver null para aparecer o bt de cadastro de seguradores.
-		if (results.hasErrors())
+		if (results.hasErrors()) {
 			mv.addObject("error", "Houve um erro ao tentar salvar o imóvel de código : " + imovel.getCodigo());
 			mv.addObject("errorDetails", "Parâmetros enviados na requisição não deram match com os atributos do modelo. Favor verificar o formulário !");
 		}
