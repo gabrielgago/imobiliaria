@@ -25,39 +25,42 @@ import org.springframework.stereotype.Component;
 @Entity
 public class Imovel implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1287322913826777453L;
+
 	@Id
 	@GeneratedValue
 	private Integer id;
+
 	private Integer codigo;
 	private String descricao;
 	private Integer codigoProprietario;
+	private String numeroApoliceSeguros;
+	private Integer codigoSegurador;
+	private Integer inscricaoCedae;
+	private Integer codigoLogradouro;
+	private String alugado;
+	
+	@Column(scale = 2)
+	private BigDecimal impostoPredial;
+
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@Temporal(TemporalType.DATE)
+	private Calendar dataInscricao;
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@Temporal(TemporalType.DATE)
+	private Calendar dataVencimentoApoliceSeguro;
+	
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumns(value = { @JoinColumn(referencedColumnName = "id", name = "rel_imovel_endereco"),
 			@JoinColumn(referencedColumnName = "id", name = "rel_imovel_endereco_correspondecia") })
 	private List<Endereco> enderecos = new ArrayList<Endereco>();
-	@Column(scale = 2)
-	private BigDecimal impostoPredial;
-	private String numeroApoliceSeguros;
-	private Integer codigoSegurador;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	@Temporal(TemporalType.DATE)
-	private Calendar dataVencimentoApoliceSeguro;
-	private Integer inscricaoCedae;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	@Temporal(TemporalType.DATE)
-	private Calendar dataInscricao;
-	private Integer codigoLogradouro;
-	private String alugado;
 
 	{
 		enderecos.add(new Endereco());
 		enderecos.add(new Endereco());
 	}
-	
+
 	public Calendar getDataVencimentoApoliceSeguro() {
 		return dataVencimentoApoliceSeguro;
 	}
@@ -179,9 +182,9 @@ public class Imovel implements Serializable {
 				+ ", dataInscricao=" + dataInscricao + ", codigoLogradouro=" + codigoLogradouro + ", alugado=" + alugado
 				+ "]";
 	}
-	
+
 	public void addEndereco(Endereco endereco) {
-		if(this.enderecos == null)
+		if (this.enderecos == null)
 			this.enderecos = new ArrayList<Endereco>();
 		this.enderecos.add(endereco);
 	}

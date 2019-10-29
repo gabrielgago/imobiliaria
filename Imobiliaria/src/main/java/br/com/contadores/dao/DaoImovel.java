@@ -11,12 +11,13 @@ import javax.persistence.Transient;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.contadores.model.Endereco;
 import br.com.contadores.model.Imovel;
 
 @Repository("Dao")
 @Transactional
 public class DaoImovel implements Dao<Imovel> {
+
+	private static final long serialVersionUID = -252472222355277522L;
 
 	public DaoImovel() {
 	}
@@ -69,6 +70,11 @@ public class DaoImovel implements Dao<Imovel> {
 	public List<Imovel> findAll() {
 		Query query = entityManager.createQuery("SELECT I FROM Imovel I", Imovel.class);
 		return query.getResultList();
+	}
+
+	@Override
+	public void delete(int id) {
+		entityManager.remove(id);
 	}
 
 }

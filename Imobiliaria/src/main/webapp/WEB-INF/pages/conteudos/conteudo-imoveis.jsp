@@ -110,7 +110,7 @@
 				<s:input type="number" class="form-control"
 					placeholder="Codigo Logradouro" path="codigoLogradouro" />
 			</div>
-			<label for="dtVencimento" class="col-sm-2 col-form-label">Data
+			<label for="dtVencimento" class="col-sm-2 col-form-label text-right">Data
 				Inscrição</label>
 			<div class="col">
 				<s:input type="date" id="dtVencimento" class="form-control"
@@ -133,7 +133,7 @@
 				<s:input type="number" class="form-control"
 					placeholder="Apolice de seguro" path="numeroApoliceSeguros" />
 			</div>
-			<label for="data" class="col-sm-2 col-form-label">Data de
+			<label for="data" class="col-sm-2 col-form-label text-right">Data de
 				Venc.</label>
 			<div class="col">
 				<s:input type="date" id="data" class="form-control"

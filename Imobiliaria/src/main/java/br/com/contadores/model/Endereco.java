@@ -11,8 +11,6 @@ import javax.persistence.ManyToOne;
 
 import org.springframework.stereotype.Component;
 
-import br.com.contadores.model.anotations.Embeddable;
-
 @Component
 @Entity
 public class Endereco implements Serializable {
@@ -36,6 +34,7 @@ public class Endereco implements Serializable {
 	private String estado;
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	private Imovel imovel;
+	private Fiador fiador;
 
 	public Integer getCep() {
 		return cep;
@@ -59,6 +58,14 @@ public class Endereco implements Serializable {
 
 	public void setImovel(Imovel imovel) {
 		this.imovel = imovel;
+	}
+
+	public Fiador getFiador() {
+		return fiador;
+	}
+
+	public void setFiador(Fiador fiador) {
+		this.fiador = fiador;
 	}
 
 	public Integer getNumero() {
