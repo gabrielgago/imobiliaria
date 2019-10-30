@@ -15,6 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.contadores.control.interfaces.Controlador;
 import br.com.contadores.dao.interfaces.Dao;
+import br.com.contadores.model.ErrorFormulario;
 import br.com.contadores.model.Imovel;
 import br.com.contadores.model.StatusImovel;
 
@@ -34,11 +35,13 @@ public class ImoveisController implements Controlador<Imovel> {
 //		if(dao.findAll()) busca todos os seguradores
 //		mv.addObject("listaSeguradores", null); caso nao venha nada na lista, devolver null para aparecer o bt de cadastro de seguradores.
 		if (results.hasErrors()) {
-			final StringBuilder errors = new StringBuilder("");
-			results.getFieldErrors().forEach(erro -> errors.append(erro).append("<br>"));
-			mv.addObject("error", "Houve um erro ao tentar salvar o imóvel de código : " + imovel.getCodigo());
-			mv.addObject("errorDetails",
-					"Parâmetros enviados na requisição não deram match com os atributos do modelo. Favor verificar o formulário." + errors);
+			final String[] errors = new String[results.getFieldErrors().size()];
+			for(int i = 0 ; i < results.getFieldErrors().size(); i++)
+				errors[i] = results.getFieldErrors().get(i).getDefaultMessage();
+			ErrorFormulario error = new ErrorFormulario("Houve um erro ao tentar salvar o imóvel de código : " + imovel.getCodigo(),
+					"Parâmetros enviados na requisição não deram match com os atributos do modelo. Favor verificar o formulário.",
+					errors);
+			mv.addObject("erroCampos" + error);
 		}
 		return mv;
 	}

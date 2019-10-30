@@ -30,12 +30,10 @@ public class Endereco implements Serializable {
 
 	private String estado;
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@Column(nullable = true)
 	@JoinColumn(referencedColumnName = "id", name = "rel_imovel_endereco", nullable = true)
 	private Imovel imovel;
 
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@Column(nullable = true)
 	@JoinColumn(referencedColumnName = "codigoFiador", name = "rel_fiador_endereco_correspondecia", nullable = true)
 	private Fiador fiador;
 

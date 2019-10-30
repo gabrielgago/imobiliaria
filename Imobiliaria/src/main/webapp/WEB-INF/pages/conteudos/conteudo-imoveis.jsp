@@ -1,10 +1,18 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags/form"%>
 
-<c:if test="${error != null}">
+<script>
+	console.log('erro > ' + "${erroCampos}");
+</script>
+<strong><c:out value="${erroCampos.errorTitle}"></c:out></strong> <br>
+<c:if test="${erroCampos != null}">
 	<div class="alert alert-danger alert-dismissible fade show"
 		role="alert">
-		<strong><c:out value="${error}"></c:out></strong> <c:out value="${errorDetails}"></c:out>
+		<strong><c:out value="${erroCampos.errorTitle}"></c:out></strong> <br>
+		<c:out value="${erroCampos.errorDetails}"></c:out> <br>
+		<c:forEach items="${erroCampos.errors}" var="erro">
+			<c:out value="erro"></c:out><br>
+		</c:forEach>
 		<button type="button" class="close" data-dismiss="alert"
 			aria-label="Close">
 			<span aria-hidden="true">&times;</span>
@@ -28,11 +36,11 @@
 					path="descricao" />
 			</div>
 			<s:select id="alugado" class="form-control col mr-3" path="alugado">
-				<s:options items="${statusImovel}" itemLabel="descricao" /> 
+				<s:options items="${statusImovel}" itemLabel="descricao" />
 			</s:select>
-<%-- 				<c:forEach items="${statusImovel}" var="status"> --%>
-<%-- 					<option><c:out value="${status.descricao}"></c:out></option> --%>
-<%-- 				</c:forEach> --%>
+			<%-- 				<c:forEach items="${statusImovel}" var="status"> --%>
+			<%-- 					<option><c:out value="${status.descricao}"></c:out></option> --%>
+			<%-- 				</c:forEach> --%>
 		</div>
 		<div class="row">
 			<div class="col">
