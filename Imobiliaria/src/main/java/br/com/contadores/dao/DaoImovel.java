@@ -11,12 +11,14 @@ import javax.persistence.Transient;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.contadores.model.Endereco;
+import br.com.contadores.dao.interfaces.Dao;
 import br.com.contadores.model.Imovel;
 
 @Repository("Dao")
 @Transactional
 public class DaoImovel implements Dao<Imovel> {
+
+	private static final long serialVersionUID = -252472222355277522L;
 
 	public DaoImovel() {
 	}
@@ -27,10 +29,11 @@ public class DaoImovel implements Dao<Imovel> {
 	@Transactional(readOnly = false)
 	@Override
 	public void create(Imovel tipo) {
-		Endereco enderecoCorrespondencia = tipo.getEnderecoCorrespondencia();
-		Endereco enderecoImovel = tipo.getEnderecoImovel();
-		entityManager.persist(enderecoCorrespondencia);
-		entityManager.persist(enderecoImovel);
+//		List<Endereco> enderecos = tipo.getEnderecos();
+//		Endereco enderecoCorrespondencia = tipo.getEnderecoCorrespondencia();
+//		Endereco enderecoImovel = tipo.getEnderecoImovel();
+//		entityManager.persist(enderecoCorrespondencia);
+//		entityManager.persist(enderecoImovel);
 		entityManager.persist(tipo);
 	}
 
@@ -68,6 +71,11 @@ public class DaoImovel implements Dao<Imovel> {
 	public List<Imovel> findAll() {
 		Query query = entityManager.createQuery("SELECT I FROM Imovel I", Imovel.class);
 		return query.getResultList();
+	}
+
+	@Override
+	public void delete(int id) {
+		entityManager.remove(id);
 	}
 
 }

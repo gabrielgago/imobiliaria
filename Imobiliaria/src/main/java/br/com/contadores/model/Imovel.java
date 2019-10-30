@@ -2,13 +2,18 @@ package br.com.contadores.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -19,35 +24,55 @@ import org.springframework.stereotype.Component;
 @Entity
 public class Imovel implements Serializable {
 
+	private static final long serialVersionUID = 1287322913826777453L;
+
 	@Id
 	@GeneratedValue
 	private Integer id;
-	private Integer codigo;
-	private String descricao;
-	private Integer codigoProprietario;
-	@OneToOne
-	private Endereco enderecoImovel = new Endereco();
-	@OneToOne
-	private Endereco enderecoCorrespondencia = new Endereco();
+
+	@Enumerated
+	private StatusImovel alugado = StatusImovel.DISPONIVEL_LOCACAO;
+
 	@Column(scale = 2)
 	private BigDecimal impostoPredial;
-	private String numeroApoliceSeguros;
-	private Integer codigoSegurador;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	@Temporal(TemporalType.DATE)
-	private Calendar dataVencimento;
-	private Integer inscricaoCedae;
+
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
 	private Calendar dataInscricao;
-	private Integer codigoLogradouro;
-	private boolean alugado;
 
-	public boolean isAlugado() {
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@Temporal(TemporalType.DATE)
+	private Calendar dataVencimentoApoliceSeguro;
+
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "imovel")
+	private List<Endereco> enderecos = new ArrayList<Endereco>();
+
+	private Integer codigo;
+	private String descricao;
+	private Integer codigoProprietario;
+	private String numeroApoliceSeguros;
+	private Integer codigoSegurador;
+	private Integer inscricaoCedae;
+	private Integer codigoLogradouro;
+
+	{
+		enderecos.add(new Endereco());
+		enderecos.add(new Endereco());
+	}
+
+	public Calendar getDataVencimentoApoliceSeguro() {
+		return dataVencimentoApoliceSeguro;
+	}
+
+	public void setDataVencimentoApoliceSeguro(Calendar dataVencimentoApoliceSeguro) {
+		this.dataVencimentoApoliceSeguro = dataVencimentoApoliceSeguro;
+	}
+
+	public StatusImovel getAlugado() {
 		return alugado;
 	}
 
-	public void setAlugado(boolean alugado) {
+	public void setAlugado(StatusImovel alugado) {
 		this.alugado = alugado;
 	}
 
@@ -75,24 +100,16 @@ public class Imovel implements Serializable {
 		this.codigoProprietario = codigoProprietario;
 	}
 
-	public Endereco getEnderecoImovel() {
-		return enderecoImovel;
-	}
-
-	public void setEnderecoImovel(Endereco enderecoImovel) {
-		this.enderecoImovel = enderecoImovel;
-	}
-
-	public Endereco getEnderecoCorrespondencia() {
-		return enderecoCorrespondencia;
-	}
-
-	public void setEnderecoCorrespondencia(Endereco enderecoCorrespondencia) {
-		this.enderecoCorrespondencia = enderecoCorrespondencia;
-	}
-
 	public BigDecimal getImpostoPredial() {
 		return impostoPredial;
+	}
+
+	public List<Endereco> getEnderecos() {
+		return enderecos;
+	}
+
+	public void setEnderecos(List<Endereco> enderecos) {
+		this.enderecos = enderecos;
 	}
 
 	public void setImpostoPredial(BigDecimal impostoPredial) {
@@ -116,11 +133,11 @@ public class Imovel implements Serializable {
 	}
 
 	public Calendar getDataVencimento() {
-		return dataVencimento;
+		return dataVencimentoApoliceSeguro;
 	}
 
 	public void setDataVencimento(Calendar dataVencimento) {
-		this.dataVencimento = dataVencimento;
+		this.dataVencimentoApoliceSeguro = dataVencimento;
 	}
 
 	public Integer getInscricaoCedae() {
@@ -158,11 +175,17 @@ public class Imovel implements Serializable {
 	@Override
 	public String toString() {
 		return "Imovel [id=" + id + ", codigo=" + codigo + ", descricao=" + descricao + ", codigoProprietario="
-				+ codigoProprietario + ", enderecoImovel=" + enderecoImovel + ", enderecoCorrespondencia="
-				+ enderecoCorrespondencia + ", impostoPredial=" + impostoPredial + ", numeroApoliceSeguros="
-				+ numeroApoliceSeguros + ", codigoSegurador=" + codigoSegurador + ", dataVencimento=" + dataVencimento
-				+ ", inscricaoCedae=" + inscricaoCedae + ", dataInscricao=" + dataInscricao + ", codigoLogradouro="
-				+ codigoLogradouro + ", alugado=" + alugado + "]";
+				+ codigoProprietario + ", enderecos=" + enderecos + ", impostoPredial=" + impostoPredial
+				+ ", numeroApoliceSeguros=" + numeroApoliceSeguros + ", codigoSegurador=" + codigoSegurador
+				+ ", dataVencimento=" + dataVencimentoApoliceSeguro + ", inscricaoCedae=" + inscricaoCedae
+				+ ", dataInscricao=" + dataInscricao + ", codigoLogradouro=" + codigoLogradouro + ", alugado=" + alugado
+				+ "]";
+	}
+
+	public void addEndereco(Endereco endereco) {
+		if (this.enderecos == null)
+			this.enderecos = new ArrayList<Endereco>();
+		this.enderecos.add(endereco);
 	}
 
 }

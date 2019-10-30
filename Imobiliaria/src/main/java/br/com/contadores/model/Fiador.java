@@ -1,30 +1,49 @@
 package br.com.contadores.model;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
+import java.util.List;
 
-import br.com.contadores.model.anotations.Embedded;
-import br.com.contadores.model.anotations.Input;
-import br.com.contadores.model.anotations.Title;
-import br.com.contadores.model.interfaces.Drawable;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
-@Title(name = "Cadastro de Fiador")
-public class Fiador implements Drawable{
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.stereotype.Component;
 
-	@Input(row = true, col = true, numberRow = 1, numberCol = 1, type = "number", classs = {
-			"form-control" }, placeholder = "Código Fiador", id = "codFiador", value = "${imovel.codigoFiador}")
+@Component
+@Entity
+public class Fiador implements Serializable {
+
+	private static final long serialVersionUID = 6100586324253265106L;
+
+	@Id
+	@GeneratedValue
 	private int codigoFiador;
-	@Input(row = true, col = true, numberRow = 1, numberCol = 2, type = "text", classs = {
-			"form-control" }, placeholder = "Nome Fiador", id = "nomeFiador", value = "${imovel.nomeFiador}")
-	private String nomeFiador;
-	@Embedded
-	private Endereco enderecoComecial;
-	@Embedded
-	private Endereco enderecoResidencial;
-	@Embedded
+
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "fiador")
+	private List<Endereco> enderecos = new ArrayList<Endereco>();
+
+	@OneToOne(fetch = FetchType.LAZY, orphanRemoval = true, cascade = CascadeType.ALL, mappedBy = "fiador")
 	private Documentos documentosFiador;
-	@Input(row = true, col = true, numberRow = 2, numberCol = 1, type = "date", classs = {
-			"form-control" }, placeholder = "Data de Nascimento", id = "dataNascimento", value = "${imovel.dataNascimento}")
-	private Calendar dataNascimento;
+
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@Temporal(TemporalType.DATE)
+	private Calendar dtNascimento;
+
+	private String nomeFiador;
+
+	{
+		enderecos.addAll(Arrays.asList(new Endereco[] { new Endereco(), new Endereco() }));
+	}
 
 	public int getCodigoFiador() {
 		return codigoFiador;
@@ -42,20 +61,12 @@ public class Fiador implements Drawable{
 		this.nomeFiador = nomeFiador;
 	}
 
-	public Endereco getEnderecoComecial() {
-		return enderecoComecial;
+	public List<Endereco> getEnderecos() {
+		return enderecos;
 	}
 
-	public void setEnderecoComecial(Endereco enderecoComecial) {
-		this.enderecoComecial = enderecoComecial;
-	}
-
-	public Endereco getEnderecoResidencial() {
-		return enderecoResidencial;
-	}
-
-	public void setEnderecoResidencial(Endereco enderecoResidencial) {
-		this.enderecoResidencial = enderecoResidencial;
+	public void setEnderecos(List<Endereco> enderecos) {
+		this.enderecos = enderecos;
 	}
 
 	public Documentos getDocumentosFiador() {
@@ -66,12 +77,12 @@ public class Fiador implements Drawable{
 		this.documentosFiador = documentosFiador;
 	}
 
-	public Calendar getDataNascimento() {
-		return dataNascimento;
+	public Calendar getDtNascimento() {
+		return dtNascimento;
 	}
 
-	public void setDataNascimento(Calendar dataNascimento) {
-		this.dataNascimento = dataNascimento;
+	public void setDtNascimento(Calendar dtNascimento) {
+		this.dtNascimento = dtNascimento;
 	}
 
 	@Override

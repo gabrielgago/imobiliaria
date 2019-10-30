@@ -1,18 +1,45 @@
 package br.com.contadores.model;
 
-import java.util.Calendar;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
-import br.com.contadores.model.anotations.Embeddable;
-
-@Embeddable
+@Entity
 public class Documentos {
 
+	@Id
+	@GeneratedValue
+	private int id;
 	private String cpf;
-	private String rg;
-	private String orgaoEmissor;
-	private Calendar dataEmissao;
+	@Embedded
+	private RegistroGeral rg;
+	@Enumerated
 	private EstadoCivil estadoCivil;
 	private String profissao;
+	@OneToOne(fetch=FetchType.LAZY, orphanRemoval=true, optional=false)
+	@JoinColumn(referencedColumnName="codigoFiador",name = "rel_fiador_documento")
+	private Fiador fiador;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Fiador getFiador() {
+		return fiador;
+	}
+
+	public void setFiador(Fiador fiador) {
+		this.fiador = fiador;
+	}
 
 	public String getCpf() {
 		return cpf;
@@ -20,30 +47,6 @@ public class Documentos {
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
-	}
-
-	public String getRg() {
-		return rg;
-	}
-
-	public void setRg(String rg) {
-		this.rg = rg;
-	}
-
-	public String getOrgaoEmissor() {
-		return orgaoEmissor;
-	}
-
-	public void setOrgaoEmissor(String orgaoEmissor) {
-		this.orgaoEmissor = orgaoEmissor;
-	}
-
-	public Calendar getDataEmissao() {
-		return dataEmissao;
-	}
-
-	public void setDataEmissao(Calendar dataEmissao) {
-		this.dataEmissao = dataEmissao;
 	}
 
 	public EstadoCivil getEstadoCivil() {
@@ -60,6 +63,14 @@ public class Documentos {
 
 	public void setProfissao(String profissao) {
 		this.profissao = profissao;
+	}
+
+	public RegistroGeral getRg() {
+		return rg;
+	}
+
+	public void setRg(RegistroGeral rg) {
+		this.rg = rg;
 	}
 
 }

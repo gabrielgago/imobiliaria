@@ -1,4 +1,4 @@
-package br.com.contadores.services;
+package br.com.contadores.services.uteis;
 
 public class Arrays {
 
