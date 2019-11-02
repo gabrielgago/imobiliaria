@@ -24,6 +24,8 @@
 	crossorigin="anonymous">
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
 	rel="stylesheet">
+<script src="<c:url value = "/resources/js/ConverterVariables.js"/>"></script>
+
 <style type="text/css">
 @
 keyframes swing { 0% {
@@ -41,12 +43,16 @@ transform
 
 
 
+
+
 :
 
 
 
 
+
  
+
 
 
 
@@ -60,8 +66,12 @@ rotate
 
 
 
+
+
 (10
 deg
+
+
 
 
 
@@ -81,12 +91,16 @@ transform
 
 
 
+
+
 :
 
 
 
 
+
  
+
 
 
 
@@ -100,8 +114,12 @@ rotate
 
 
 
+
+
 (0
 deg
+
+
 
 
 
@@ -121,12 +139,16 @@ transform
 
 
 
+
+
 :
 
 
 
 
+
  
+
 
 
 
@@ -140,8 +162,12 @@ rotate
 
 
 
+
+
 (-10
 deg
+
+
 
 
 
@@ -161,12 +187,16 @@ transform
 
 
 
+
+
 :
 
 
 
 
+
  
+
 
 
 
@@ -180,8 +210,12 @@ rotate
 
 
 
+
+
 (0
 deg
+
+
 
 
 
@@ -201,12 +235,16 @@ transform
 
 
 
+
+
 :
 
 
 
 
+
  
+
 
 
 
@@ -220,8 +258,12 @@ rotate
 
 
 
+
+
 (5
 deg
+
+
 
 
 
@@ -241,12 +283,16 @@ transform
 
 
 
+
+
 :
 
 
 
 
+
  
+
 
 
 
@@ -260,8 +306,12 @@ rotate
 
 
 
+
+
 (0
 deg
+
+
 
 
 
@@ -281,12 +331,16 @@ transform
 
 
 
+
+
 :
 
 
 
 
+
  
+
 
 
 
@@ -300,8 +354,12 @@ rotate
 
 
 
+
+
 (-5
 deg
+
+
 
 
 
@@ -321,12 +379,16 @@ transform
 
 
 
+
+
 :
 
 
 
 
+
  
+
 
 
 
@@ -340,8 +402,12 @@ rotate
 
 
 
+
+
 (0
 deg
+
+
 
 
 
@@ -368,7 +434,10 @@ transform
 
 
 
+
+
 :
+
 
 
 
@@ -378,7 +447,10 @@ transform
 
 
 
+
 scale
+
+
 
 
 
@@ -397,12 +469,16 @@ opacity
 
 
 
+
+
 :
 
 
 
 
+
  
+
 
 
 
@@ -844,8 +920,6 @@ body {
 .row {
 	margin-bottom: 15px;
 }
-
-
 </style>
 
 <script type="text/javascript">

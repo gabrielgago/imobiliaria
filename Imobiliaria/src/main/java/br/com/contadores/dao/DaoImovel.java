@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import br.com.contadores.dao.interfaces.Dao;
 import br.com.contadores.model.Imovel;
 
-@Repository("Dao")
+@Repository
 @Transactional
 public class DaoImovel implements Dao<Imovel> {
 

@@ -4,21 +4,19 @@
  
  <script>
  
- let nome = 'Gabriel'
- const conversor = new ConverterVariables();
- conversor.sendToConvert('<%= request.getContextPath() %>', {nome}, (resposta)=>{
-	 console.log(resposta);
+	 let nome = 'Gabriel'
+	 const conversor = new ConverterVariables();
+	 conversor.sendToConvert('<%= "/Imobiliaria/conversor/converter" %>', {nome}, (resposta) => console.log(resposta));
  
  </script>
  
  <%
-  	String nome = new JSPConverter<String>(session).fromJavaScriptToJava("nome");
- 	System.out.println(nome);
-  %>
-  
-  <script>
- });
-  </script>
+ 
+//   	String nome = new JSPConverter<String>(session).fromJavaScriptToJava("nome");
+//  	System.out.println(nome);
+ 	
+ %>
+ 
   
   <html>
   <body>

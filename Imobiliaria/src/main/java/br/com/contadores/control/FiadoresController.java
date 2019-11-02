@@ -13,6 +13,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.contadores.control.interfaces.Controlador;
 import br.com.contadores.dao.interfaces.Dao;
+import br.com.contadores.model.Error;
 import br.com.contadores.model.Fiador;
 
 @Controller
@@ -73,6 +74,18 @@ public class FiadoresController implements Controlador<Fiador> {
 		ModelAndView mv = new ModelAndView("consulta-fiadores");
 		mv.addObject("fiadores", daoFiador.findAll());
 		return mv;
+	}
+
+	@Override
+	public ModelAndView carregarFormulario(Fiador t, BindingResult results, Error error) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ModelAndView cadastrar(@Valid Fiador t, BindingResult binding, RedirectAttributes redirect, Error error) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
