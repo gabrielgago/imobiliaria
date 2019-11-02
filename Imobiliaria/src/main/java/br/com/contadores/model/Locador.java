@@ -24,7 +24,7 @@ public class Locador implements Serializable {
 	private Documentos documentosLocador;
 	private String modPagamento;
 	private Double txAdmin;
-	
+
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
 	private Calendar dtNascimento;

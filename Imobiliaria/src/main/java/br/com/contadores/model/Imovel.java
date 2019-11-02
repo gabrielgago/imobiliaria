@@ -13,8 +13,6 @@ import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinColumns;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -32,13 +30,6 @@ public class Imovel implements Serializable {
 	@GeneratedValue
 	private Integer id;
 
-	private Integer codigo;
-	private String descricao;
-	private Integer codigoProprietario;
-	private String numeroApoliceSeguros;
-	private Integer codigoSegurador;
-	private Integer inscricaoCedae;
-	private Integer codigoLogradouro;
 	@Enumerated
 	private StatusImovel alugado = StatusImovel.DISPONIVEL_LOCACAO;
 
@@ -53,8 +44,16 @@ public class Imovel implements Serializable {
 	@Temporal(TemporalType.DATE)
 	private Calendar dataVencimentoApoliceSeguro;
 
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="imovel")
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "imovel")
 	private List<Endereco> enderecos = new ArrayList<Endereco>();
+
+	private Integer codigo;
+	private String descricao;
+	private Integer codigoProprietario;
+	private String numeroApoliceSeguros;
+	private Integer codigoSegurador;
+	private Integer inscricaoCedae;
+	private Integer codigoLogradouro;
 
 	{
 		enderecos.add(new Endereco());

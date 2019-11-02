@@ -49,7 +49,8 @@ public class PersistenceJPAConfig {
 		emf.setJpaVendorAdapter(getHibernateAdapter());
 		Properties jpaProperties = new Properties();
 		jpaProperties.put("hibernate.dialect", "org.hibernate.dialect.MySQL57Dialect");
-		jpaProperties.put("hibernate.hbm2ddl.auto", "create");
+		jpaProperties.put("hibernate.hbm2ddl.auto", "update");
+//		jpaProperties.put("hibernate.hbm2ddl.auto", "create");
 		jpaProperties.put("hibernate.show_sql", "true");
 		jpaProperties.put("hibernate.format_sql", "false");
 		emf.setJpaProperties(jpaProperties);

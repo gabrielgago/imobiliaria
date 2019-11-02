@@ -18,7 +18,7 @@ import br.com.contadores.model.Fiador;
 @Controller
 @RequestMapping("/fiador")
 public class FiadoresController implements Controlador<Fiador> {
-	
+
 	public Dao<Fiador> daoFiador;
 
 	@Override
@@ -62,7 +62,7 @@ public class FiadoresController implements Controlador<Fiador> {
 	}
 
 	@Override
-	@RequestMapping(value="remover/{id}", method=RequestMethod.DELETE)
+	@RequestMapping(value = "remover/{id}", method = RequestMethod.DELETE)
 	public String remover(int id) {
 		daoFiador.delete(id);
 		return "redirect:/fiadores";

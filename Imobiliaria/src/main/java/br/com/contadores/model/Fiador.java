@@ -28,14 +28,18 @@ public class Fiador implements Serializable {
 	@Id
 	@GeneratedValue
 	private int codigoFiador;
-	private String nomeFiador;
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="fiador")
+
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "fiador")
 	private List<Endereco> enderecos = new ArrayList<Endereco>();
-	@OneToOne(fetch=FetchType.LAZY, orphanRemoval=true, cascade=CascadeType.ALL, mappedBy="fiador")
+
+	@OneToOne(fetch = FetchType.LAZY, orphanRemoval = true, cascade = CascadeType.ALL, mappedBy = "fiador")
 	private Documentos documentosFiador;
+
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
 	private Calendar dtNascimento;
+
+	private String nomeFiador;
 
 	{
 		enderecos.addAll(Arrays.asList(new Endereco[] { new Endereco(), new Endereco() }));

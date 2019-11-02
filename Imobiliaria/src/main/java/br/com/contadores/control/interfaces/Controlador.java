@@ -6,11 +6,17 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import br.com.contadores.model.Error;
+
 public interface Controlador<T> {
 
 	ModelAndView carregarFormulario(T t, BindingResult results);
+	
+	ModelAndView carregarFormulario(T t, BindingResult results, Error error);
 
 	ModelAndView cadastrar(@Valid T t, BindingResult binding, RedirectAttributes redirect);
+	
+	ModelAndView cadastrar(@Valid T t, BindingResult binding, RedirectAttributes redirect, Error error);
 
 	ModelAndView cadastrar(@Valid T t, BindingResult binding);
 
