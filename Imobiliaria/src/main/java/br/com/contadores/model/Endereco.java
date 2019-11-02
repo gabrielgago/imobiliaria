@@ -35,12 +35,10 @@ public class Endereco implements Serializable {
 	private String cidade;
 	private String estado;
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@JoinColumns(value = { @JoinColumn(referencedColumnName = "id", name = "rel_imovel_endereco"),
-			@JoinColumn(referencedColumnName = "id", name = "rel_imovel_endereco_correspondecia") })
+	@JoinColumn(referencedColumnName = "id", name = "rel_imovel_endereco")
 	private Imovel imovel;
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@JoinColumns(value = { @JoinColumn(referencedColumnName = "codigoFiador", name = "rel_fiador_endereco"),
-			@JoinColumn(referencedColumnName = "codigoFiador", name = "rel_fiador_endereco_correspondecia") })
+	@JoinColumn(referencedColumnName = "codigoFiador")
 	private Fiador fiador;
 
 	public Integer getCep() {
