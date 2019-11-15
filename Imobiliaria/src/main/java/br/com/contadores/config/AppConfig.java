@@ -11,7 +11,10 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = { "br.com.contadores" })
+@ComponentScan(basePackages = { "br.com.contadores.config",
+		"br.com.contadores.control",
+		"br.com.contadores.dao",
+		"br.com.contadores.model"})
 public class AppConfig extends WebMvcConfigurerAdapter {
 
 	@Override
