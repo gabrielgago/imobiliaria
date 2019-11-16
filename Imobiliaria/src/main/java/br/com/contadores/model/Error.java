@@ -1,12 +1,15 @@
 package br.com.contadores.model;
 
+import org.springframework.validation.ObjectError;
+
 public interface Error {
 
-	public String getErrorTitle();
+	String getErrorTitle();
 
-	public String getErrorDetails() ;
+	String getErrorDetails() ;
 
-	public String[] getErrors() ;
+	String getErrors() ;
 
-	public void create(String string, String string2, String[] errors);
+	Error create(ObjectError error);
+	
 }

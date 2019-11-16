@@ -11,12 +11,8 @@ import br.com.contadores.model.Error;
 public interface Controlador<T> {
 
 	ModelAndView carregarFormulario(T t, BindingResult results);
-	
-	ModelAndView carregarFormulario(T t, BindingResult results, Error error);
 
 	ModelAndView cadastrar(@Valid T t, BindingResult binding, RedirectAttributes redirect);
-	
-	ModelAndView cadastrar(@Valid T t, BindingResult binding, RedirectAttributes redirect, Error error);
 
 	ModelAndView cadastrar(@Valid T t, BindingResult binding);
 

@@ -76,16 +76,4 @@ public class FiadoresController implements Controlador<Fiador> {
 		return mv;
 	}
 
-	@Override
-	public ModelAndView carregarFormulario(Fiador t, BindingResult results, Error error) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ModelAndView cadastrar(@Valid Fiador t, BindingResult binding, RedirectAttributes redirect, Error error) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

@@ -16,8 +16,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import br.com.contadores.control.interfaces.Controlador;
 import br.com.contadores.dao.interfaces.Dao;
 import br.com.contadores.model.Error;
+import br.com.contadores.model.ErrorPadrao;
 import br.com.contadores.model.Imovel;
 import br.com.contadores.model.StatusImovel;
+import br.com.contadores.services.X9Errors;
 
 @Controller
 @RequestMapping("/imovel")
@@ -25,28 +27,22 @@ public class ImoveisController implements Controlador<Imovel> {
 
 	@Autowired
 	public Dao<Imovel> daoImovel;
+	public Error erro;
 
 	@Override
 	@GetMapping("/formulario")
-	public ModelAndView carregarFormulario(Imovel imovel, BindingResult results, Error erro) {
+	public ModelAndView carregarFormulario(Imovel imovel, BindingResult results) {
 		ModelAndView mv = new ModelAndView("cadastro-imoveis");
 		mv.addObject("imovel", imovel);
 		mv.addObject("statusImovel", StatusImovel.values());
-		if (results.hasErrors()) {
-			final String[] errors = new String[results.getFieldErrors().size()];
-			for (int i = 0; i < results.getFieldErrors().size(); i++)
-				errors[i] = results.getFieldErrors().get(i).getDefaultMessage();
-			erro.create("Houve um erro ao tentar salvar o imóvel de código : " + imovel.getCodigo(),
-					"Parâmetros enviados na requisição não deram match com os atributos do modelo. Favor verificar o formulário.",
-					errors);
-			mv.addObject("erroCampos" + erro);
-		}
+		if (results.hasErrors())
+			mv.addObject("errosCompos" + new X9Errors().informar(results));
 		return mv;
 	}
 
 	@Override
 	@PostMapping("/cadastrar")
-	public ModelAndView cadastrar(@Valid Imovel imovel, BindingResult binding, RedirectAttributes redirect, Error errorFuncionario) {
+	public ModelAndView cadastrar(@Valid Imovel imovel, BindingResult binding, RedirectAttributes redirect) {
 		if (binding.hasErrors())
 			return carregarFormulario(imovel, binding);
 
@@ -58,7 +54,7 @@ public class ImoveisController implements Controlador<Imovel> {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			e.printStackTrace();
-			return carregarFormulario(imovel, binding, errorFuncionario);
+			return carregarFormulario(imovel, binding);
 		}
 		ModelAndView mv = new ModelAndView("redirect:/imovel/formulario");
 		return mv;
@@ -86,16 +82,6 @@ public class ImoveisController implements Controlador<Imovel> {
 
 	@Override
 	public ModelAndView cadastrar(@Valid Imovel imovel, BindingResult binding) {
-		throw new RuntimeException();
-	}
-
-	@Override
-	public ModelAndView carregarFormulario(Imovel t, BindingResult results) {
-		throw new RuntimeException();
-	}
-
-	@Override
-	public ModelAndView cadastrar(@Valid Imovel t, BindingResult binding, RedirectAttributes redirect) {
 		throw new RuntimeException();
 	}
 

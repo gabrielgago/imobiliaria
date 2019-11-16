@@ -8,10 +8,9 @@
 <c:if test="${erroCampos != null}">
 	<div class="alert alert-danger alert-dismissible fade show"
 		role="alert">
-		<strong><c:out value="${erroCampos.errorTitle}"></c:out></strong> <br>
-		<c:out value="${erroCampos.errorDetails}"></c:out> <br>
-		<c:forEach items="${erroCampos.errors}" var="erro">
-			<c:out value="erro"></c:out><br>
+		<c:forEach items="${errosCompos}" var="erro">
+			<strong><c:out value="Erro: (${erro.codError}) ${erro.titulo}"></c:out></strong> <br>
+			<c:out value="${erro.detalhes}"></c:out>
 		</c:forEach>
 		<button type="button" class="close" data-dismiss="alert"
 			aria-label="Close">
