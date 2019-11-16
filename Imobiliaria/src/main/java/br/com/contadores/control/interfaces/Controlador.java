@@ -7,10 +7,11 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.contadores.model.Error;
+import br.com.contadores.model.Imovel;
 
 public interface Controlador<T> {
 
-	ModelAndView carregarFormulario(T t, BindingResult results);
+	String carregarFormulario();
 
 	ModelAndView cadastrar(@Valid T t, BindingResult binding, RedirectAttributes redirect);
 
@@ -21,5 +22,6 @@ public interface Controlador<T> {
 	String remover(int id);
 
 	ModelAndView listar(T t);
+
 
 }

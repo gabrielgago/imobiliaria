@@ -19,7 +19,6 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
@@ -37,8 +36,8 @@ public class Imovel implements Serializable {
 	@Enumerated
 	private StatusImovel alugado = StatusImovel.DISPONIVEL_LOCACAO;
 
-    @Digits(integer=9, fraction=2, message="{br.com.contadores.model.impostoPredial.formatoDesejado}")
-    @DecimalMin(value = "0.0", inclusive = false, message="{br.com.contadores.model.impostoPredial.valorMinimoRequerido}")
+    @Digits(integer=9, fraction=2, message="{br.com.contadores.model.imovel.impostoPredial.formatoDesejado}")
+    @DecimalMin(value = "0.0", inclusive = false, message="{br.com.contadores.model.imovel.impostoPredial.valorMinimoRequerido}")
 	@Column(scale = 2)
 	private BigDecimal impostoPredial;
 
@@ -53,6 +52,7 @@ public class Imovel implements Serializable {
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "imovel")
 	private List<Endereco> enderecos = new ArrayList<Endereco>();
 
+	@Min(value = 0, message="{br.com.contadores.model.imovel.codigo}")
 	private Integer codigo;
 	private String descricao;
 	private Integer codigoProprietario;
