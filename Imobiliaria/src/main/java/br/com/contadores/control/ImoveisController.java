@@ -5,7 +5,9 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import br.com.contadores.dao.interfaces.Dao;
 import br.com.contadores.model.Error;
 import br.com.contadores.model.Imovel;
+import br.com.contadores.services.validators.ImovelValidation;
 
 @Controller
 @RequestMapping("/imovel")
@@ -25,6 +28,12 @@ public class ImoveisController /*implements Controlador<Imovel>*/ {
 	public Dao<Imovel> daoImovel;
 	public Error erro;
 
+	//vincula o validador com o controller
+    @InitBinder
+    public void initBinder(WebDataBinder binder){
+        binder.addValidators(new ImovelValidation());
+    }
+	
 	@RequestMapping("/formulario")
 	public ModelAndView carregarFormulario() {
 		ModelAndView mv = new ModelAndView("cadastro-imoveis");
@@ -37,8 +46,8 @@ public class ImoveisController /*implements Controlador<Imovel>*/ {
 
 		if (binding.hasErrors()) {
 			ModelAndView modelAndView = new ModelAndView("cadastro-imoveis");
-			modelAndView.addObject("existsErros", true);
 			return modelAndView;
+//			carregarFormulario();
 		}
 
 		try {

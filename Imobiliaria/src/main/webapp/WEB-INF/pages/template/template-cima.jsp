@@ -45,13 +45,25 @@ transform
 
 
 
+
+
+
+
+
+
 :
 
 
 
 
 
+
+
+
  
+
+
+
 
 
 
@@ -68,8 +80,20 @@ rotate
 
 
 
+
+
+
+
+
+
 (10
 deg
+
+
+
+
+
+
 
 
 
@@ -93,13 +117,25 @@ transform
 
 
 
+
+
+
+
+
+
 :
 
 
 
 
 
+
+
+
  
+
+
+
 
 
 
@@ -116,8 +152,20 @@ rotate
 
 
 
+
+
+
+
+
+
 (0
 deg
+
+
+
+
+
+
 
 
 
@@ -141,13 +189,25 @@ transform
 
 
 
+
+
+
+
+
+
 :
 
 
 
 
 
+
+
+
  
+
+
+
 
 
 
@@ -164,8 +224,20 @@ rotate
 
 
 
+
+
+
+
+
+
 (-10
 deg
+
+
+
+
+
+
 
 
 
@@ -189,13 +261,25 @@ transform
 
 
 
+
+
+
+
+
+
 :
 
 
 
 
 
+
+
+
  
+
+
+
 
 
 
@@ -212,8 +296,20 @@ rotate
 
 
 
+
+
+
+
+
+
 (0
 deg
+
+
+
+
+
+
 
 
 
@@ -237,13 +333,25 @@ transform
 
 
 
+
+
+
+
+
+
 :
 
 
 
 
 
+
+
+
  
+
+
+
 
 
 
@@ -260,8 +368,20 @@ rotate
 
 
 
+
+
+
+
+
+
 (5
 deg
+
+
+
+
+
+
 
 
 
@@ -285,13 +405,25 @@ transform
 
 
 
+
+
+
+
+
+
 :
 
 
 
 
 
+
+
+
  
+
+
+
 
 
 
@@ -308,8 +440,20 @@ rotate
 
 
 
+
+
+
+
+
+
 (0
 deg
+
+
+
+
+
+
 
 
 
@@ -333,13 +477,25 @@ transform
 
 
 
+
+
+
+
+
+
 :
 
 
 
 
 
+
+
+
  
+
+
+
 
 
 
@@ -356,8 +512,20 @@ rotate
 
 
 
+
+
+
+
+
+
 (-5
 deg
+
+
+
+
+
+
 
 
 
@@ -381,13 +549,25 @@ transform
 
 
 
+
+
+
+
+
+
 :
 
 
 
 
 
+
+
+
  
+
+
+
 
 
 
@@ -404,8 +584,20 @@ rotate
 
 
 
+
+
+
+
+
+
 (0
 deg
+
+
+
+
+
+
 
 
 
@@ -436,7 +628,16 @@ transform
 
 
 
+
+
+
+
+
+
 :
+
+
+
 
 
 
@@ -448,7 +649,16 @@ transform
 
 
 
+
+
+
 scale
+
+
+
+
+
+
 
 
 
@@ -471,13 +681,25 @@ opacity
 
 
 
+
+
+
+
+
+
 :
 
 
 
 
 
+
+
+
  
+
+
+
 
 
 
@@ -919,6 +1141,31 @@ body {
 
 .row {
 	margin-bottom: 15px;
+}
+
+.div-error {
+	background-color: tomato;
+	border-radius: 5px;
+	box-shadow: 0px 0px 4px 0px #949494;
+	color: white;
+	font-size: small;
+	margin-bottom: 11px;
+	outline: none;
+	border: none;
+	padding: 6px;
+	transition: 1s;
+}
+
+.icon-close-error {
+	position: absolute;
+	display: inline-block;
+	right: 23px;
+	top: 5px;
+}
+
+.error {
+	display: inline-block;
+	width: 288px;
 }
 </style>
 

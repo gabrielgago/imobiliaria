@@ -8,26 +8,34 @@
 	<h2>Cadastro de Imóveis</h2>
 	<hr>
 
-	<s:form action="cadastrar" method="POST" modelAttribute="imovel" >
+	<s:form action="cadastrar" method="POST" modelAttribute="imovel">
 
 
-	<c:if test="${existsErros}">
-		<div class="alert alert-danger alert-dismissible fade show"
-			role="alert">
-			<strong><h2><p>Foi encontrado erros no formulário.</p></h2></strong>
-			<s:errors path="codigo"/>
-			<button type="button" class="close" data-dismiss="alert"
-				aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			</button>
-		</div>
-	</c:if>
+		<%-- 	<c:if test="${existsErros}"> --%>
+		<!-- 		<div class="alert alert-danger alert-dismissible fade show" -->
+		<!-- 			role="alert"> -->
+		<%-- 			<strong><h2><p>Foi encontrado erros no formulário.</p></h2></strong> --%>
+		<%-- 			<s:errors path="codigo"/> --%>
+		<!-- 			<button type="button" class="close" data-dismiss="alert" -->
+		<!-- 				aria-label="Close"> -->
+		<%-- 				<span aria-hidden="true">&times;</span> --%>
+		<!-- 			</button> -->
+		<!-- 		</div> -->
+		<%-- 	</c:if> --%>
 
 		<br />
 		<div class="row">
 			<div class="col">
-				<s:input type="number" class="form-control input-label"
-					placeholder="Código Imóvel" id="codigo" path="codigo" />
+				<div>
+					<div class="div-error">
+						<s:errors path="codigo" class="error" />
+						<div class="icon-close-error">
+							<i class="fas fa-times" ></i>
+						</div>
+					</div>
+					<s:input type="number" class="form-control input-label"
+						placeholder="Código Imóvel" id="codigo" path="codigo" />
+				</div>
 			</div>
 			<div class="col">
 				<s:input type="text" class="form-control" placeholder="Locador"
