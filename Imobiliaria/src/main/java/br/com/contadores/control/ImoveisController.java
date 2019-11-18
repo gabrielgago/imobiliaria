@@ -15,14 +15,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import br.com.contadores.control.interfaces.Controlador;
 import br.com.contadores.dao.interfaces.Dao;
 import br.com.contadores.model.Error;
 import br.com.contadores.model.Imovel;
-import br.com.contadores.services.validators.ImovelValidation;
+import br.com.contadores.services.validadores.ValidadorImovel;
 
 @Controller
 @RequestMapping("/imovel")
-public class ImoveisController /*implements Controlador<Imovel>*/ {
+public class ImoveisController implements Controlador<Imovel> {
 
 	@Autowired
 	public Dao<Imovel> daoImovel;
@@ -31,7 +32,7 @@ public class ImoveisController /*implements Controlador<Imovel>*/ {
 	//vincula o validador com o controller
     @InitBinder
     public void initBinder(WebDataBinder binder){
-        binder.addValidators(new ImovelValidation());
+        binder.addValidators(new ValidadorImovel());
     }
 	
 	@RequestMapping("/formulario")
@@ -75,14 +76,10 @@ public class ImoveisController /*implements Controlador<Imovel>*/ {
 	}
 
 	@GetMapping("/consulta")
-	public ModelAndView listar(Imovel imovel) {
+	public ModelAndView listar() {
 		ModelAndView mv = new ModelAndView("consulta-imoveis");
 		mv.addObject("imoveis", daoImovel.findAll());
 		return mv;
-	}
-
-	public ModelAndView cadastrar(@Valid Imovel imovel, BindingResult binding) {
-		throw new RuntimeException();
 	}
 
 }

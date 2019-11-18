@@ -51,6 +51,10 @@ transform
 
 
 
+
+
+
+
 :
 
 
@@ -60,7 +64,11 @@ transform
 
 
 
+
+
  
+
+
 
 
 
@@ -86,8 +94,16 @@ rotate
 
 
 
+
+
+
+
 (10
 deg
+
+
+
+
 
 
 
@@ -123,6 +139,10 @@ transform
 
 
 
+
+
+
+
 :
 
 
@@ -132,7 +152,11 @@ transform
 
 
 
+
+
  
+
+
 
 
 
@@ -158,8 +182,16 @@ rotate
 
 
 
+
+
+
+
 (0
 deg
+
+
+
+
 
 
 
@@ -195,6 +227,10 @@ transform
 
 
 
+
+
+
+
 :
 
 
@@ -204,7 +240,11 @@ transform
 
 
 
+
+
  
+
+
 
 
 
@@ -230,8 +270,16 @@ rotate
 
 
 
+
+
+
+
 (-10
 deg
+
+
+
+
 
 
 
@@ -267,6 +315,10 @@ transform
 
 
 
+
+
+
+
 :
 
 
@@ -276,7 +328,11 @@ transform
 
 
 
+
+
  
+
+
 
 
 
@@ -302,8 +358,16 @@ rotate
 
 
 
+
+
+
+
 (0
 deg
+
+
+
+
 
 
 
@@ -339,6 +403,10 @@ transform
 
 
 
+
+
+
+
 :
 
 
@@ -348,7 +416,11 @@ transform
 
 
 
+
+
  
+
+
 
 
 
@@ -374,8 +446,16 @@ rotate
 
 
 
+
+
+
+
 (5
 deg
+
+
+
+
 
 
 
@@ -411,6 +491,10 @@ transform
 
 
 
+
+
+
+
 :
 
 
@@ -420,7 +504,11 @@ transform
 
 
 
+
+
  
+
+
 
 
 
@@ -446,8 +534,16 @@ rotate
 
 
 
+
+
+
+
 (0
 deg
+
+
+
+
 
 
 
@@ -483,6 +579,10 @@ transform
 
 
 
+
+
+
+
 :
 
 
@@ -492,7 +592,11 @@ transform
 
 
 
+
+
  
+
+
 
 
 
@@ -518,8 +622,16 @@ rotate
 
 
 
+
+
+
+
 (-5
 deg
+
+
+
+
 
 
 
@@ -555,6 +667,10 @@ transform
 
 
 
+
+
+
+
 :
 
 
@@ -564,7 +680,11 @@ transform
 
 
 
+
+
  
+
+
 
 
 
@@ -590,8 +710,16 @@ rotate
 
 
 
+
+
+
+
 (0
 deg
+
+
+
+
 
 
 
@@ -634,7 +762,13 @@ transform
 
 
 
+
+
+
+
 :
+
+
 
 
 
@@ -652,7 +786,13 @@ transform
 
 
 
+
+
 scale
+
+
+
+
 
 
 
@@ -687,6 +827,10 @@ opacity
 
 
 
+
+
+
+
 :
 
 
@@ -696,7 +840,11 @@ opacity
 
 
 
+
+
  
+
+
 
 
 
@@ -1153,7 +1301,12 @@ body {
 	outline: none;
 	border: none;
 	padding: 6px;
-	transition: 1s;
+	transition: 0.5s;
+	font-size: x-small;
+}
+
+.div-error:hover {
+	font-size: large;
 }
 
 .icon-close-error {

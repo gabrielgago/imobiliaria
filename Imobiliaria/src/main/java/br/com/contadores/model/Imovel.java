@@ -19,7 +19,9 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
@@ -54,6 +56,7 @@ public class Imovel implements Serializable {
 
 	@Min(value = 0, message="{br.com.contadores.model.imovel.codigo}")
 	private Integer codigo;
+	@javax.validation.constraints.NotEmpty(message = "{br.com.contadores.model.imovel.descricao}")
 	private String descricao;
 	private Integer codigoProprietario;
 	private String numeroApoliceSeguros;

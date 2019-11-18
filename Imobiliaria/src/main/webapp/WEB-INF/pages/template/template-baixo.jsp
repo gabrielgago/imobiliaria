@@ -16,7 +16,23 @@
 <script src="<c:url value = "/resources/js/cep.js"/>"></script>
 <%--     <script src="<c:url value = "/resources/js/ConverterVariables.js"/>"></script> --%>
 <script type="text/javascript">
-	$('.icon-close-error').click(()=> document.querySelector('.div-error').style.display = none /*$('.div-error').css('display', 'none')*/)
+	$('.icon-close-error').click(function(){
+		console.log($(this).parent());
+		let divError = $($(this).parent());
+		sumirAlertaErros(divError,()=>$($(this).parent()).css('display', 'none'));
+	})
+	
+	function sumirAlertaErros(div, funcaoCallback){
+// 		$('.div-error').css('opacity', '0')
+		$(div).css('opacity', '0')
+		let intervalo = setInterval(function(){
+			if($('.div-error').css('opacity') == '0'){
+				funcaoCallback();
+				clearInterval(intervalo);
+			}
+			console.log("foi executado.")
+		},500);
+	}
 </script>
 </body>
 

@@ -10,18 +10,7 @@
 
 	<s:form action="cadastrar" method="POST" modelAttribute="imovel">
 
-
-		<%-- 	<c:if test="${existsErros}"> --%>
-		<!-- 		<div class="alert alert-danger alert-dismissible fade show" -->
-		<!-- 			role="alert"> -->
-		<%-- 			<strong><h2><p>Foi encontrado erros no formulário.</p></h2></strong> --%>
-		<%-- 			<s:errors path="codigo"/> --%>
-		<!-- 			<button type="button" class="close" data-dismiss="alert" -->
-		<!-- 				aria-label="Close"> -->
-		<%-- 				<span aria-hidden="true">&times;</span> --%>
-		<!-- 			</button> -->
-		<!-- 		</div> -->
-		<%-- 	</c:if> --%>
+		<%-- 		<s:errors path="*"/> --%>
 
 		<br />
 		<div class="row">
@@ -30,7 +19,7 @@
 					<div class="div-error">
 						<s:errors path="codigo" class="error" />
 						<div class="icon-close-error">
-							<i class="fas fa-times" ></i>
+							<i class="fas fa-times"></i>
 						</div>
 					</div>
 					<s:input type="number" class="form-control input-label"
@@ -135,9 +124,17 @@
 		</div>
 		<div class="row">
 			<div class="col">
-				<s:input type="text" class="form-control"
-					placeholder="Imposto Predial" path="impostoPredial"
-					onblur="this.value = this.value.replace(',', '.');" />
+				<div>
+					<div class="div-error">
+						<s:errors path="impostoPredial" class="error" />
+						<div class="icon-close-error">
+							<i class="fas fa-times"></i>
+						</div>
+					</div>
+					<s:input type="text" class="form-control"
+						placeholder="Imposto Predial" path="impostoPredial"
+						onblur="this.value = this.value.replace(',', '.');" />
+				</div>
 			</div>
 			<div class="col">
 				<s:input type="number" class="form-control"
@@ -184,6 +181,5 @@
 				<a href="#" class="btn btn-secondary">Listar</a>
 			</div>
 		</div>
-
 	</s:form>
 </div>
