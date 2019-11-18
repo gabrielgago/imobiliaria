@@ -19,6 +19,7 @@ import br.com.contadores.control.interfaces.Controlador;
 import br.com.contadores.dao.interfaces.Dao;
 import br.com.contadores.model.Error;
 import br.com.contadores.model.Imovel;
+import br.com.contadores.services.ImovelService;
 import br.com.contadores.services.validadores.ValidadorImovel;
 
 @Controller
@@ -27,6 +28,8 @@ public class ImoveisController implements Controlador<Imovel> {
 
 	@Autowired
 	public Dao<Imovel> daoImovel;
+	@Autowired
+	public ImovelService imovelService;
 	public Error erro;
 
 	//vincula o validador com o controller
@@ -48,12 +51,11 @@ public class ImoveisController implements Controlador<Imovel> {
 		if (binding.hasErrors()) {
 			ModelAndView modelAndView = new ModelAndView("cadastro-imoveis");
 			return modelAndView;
-//			carregarFormulario();
 		}
-
 		try {
 			imovel.getEnderecos().forEach(e -> e.setImovel(imovel));
-			daoImovel.create(imovel);
+//			daoImovel.create(imovel);
+			imovelService.saveImovel(imovel);
 			redirect.addFlashAttribute("success",
 					"Imóvel salvo com sucesso ! Imóvel de código : " + imovel.getCodigo());
 		} catch (Exception e) {

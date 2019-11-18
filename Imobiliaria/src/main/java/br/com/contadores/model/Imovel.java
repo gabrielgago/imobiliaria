@@ -19,9 +19,7 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
 
-import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
@@ -43,11 +41,11 @@ public class Imovel implements Serializable {
 	@Column(scale = 2)
 	private BigDecimal impostoPredial;
 
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat
 	@Temporal(TemporalType.DATE)
 	private Calendar dataInscricao;
 
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat
 	@Temporal(TemporalType.DATE)
 	private Calendar dataVencimentoApoliceSeguro;
 
