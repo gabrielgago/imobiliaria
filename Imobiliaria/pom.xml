@@ -9,17 +9,25 @@
 	<name>Imobiliaria Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<properties>
+		<spring-core.version>4.1.6.RELEASE</spring-core.version>
+		<javax.servlet-api.version>3.0.0</javax.servlet-api.version>
+		<spring-data-jpa.version>1.9.2.RELEASE</spring-data-jpa.version>
+		<junit.version>4.11</junit.version>
+		<spring-webmvc.version>4.1.6.RELEASE</spring-webmvc.version>
+		<jstl.version>1.2</jstl.version>
+		<spring.version>4.1.6.RELEASE</spring.version>
+
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 		<javax.inject.version>1</javax.inject.version>
-		<spring.version>4.3.0.RELEASE</spring.version>
 		<failOnMissingWebXml>false</failOnMissingWebXml>
 	</properties>
 	<dependencies>
+	
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
+			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- Spring -->
@@ -31,12 +39,12 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>${spring.version}</version>
+			<version>${spring-webmvc.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
-			<version>${spring.version}</version>
+			<version>${spring-core.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -52,9 +60,8 @@
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-jpa</artifactId>
-			<version>2.2.1.RELEASE</version>
+			<version>${spring-data-jpa.version}</version>
 		</dependency>
-
 
 		<!-- hibernate -->
 		<dependency>
@@ -106,11 +113,6 @@
 			<version>6.1.0.Final</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.glassfish.web</groupId>
-			<artifactId>javax.el</artifactId>
-			<version>2.2.6</version>
-		</dependency>
 	</dependencies>
 	<build>
 		<finalName>Imobiliaria</finalName>
