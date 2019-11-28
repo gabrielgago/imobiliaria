@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.format.datetime.DateFormatter;
 import org.springframework.format.datetime.DateFormatterRegistrar;
 import org.springframework.format.support.DefaultFormattingConversionService;
@@ -15,11 +16,14 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import br.com.contadores.repository.ImovelRepository;
+
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = { "br.com.contadores.config", "br.com.contadores.control", "br.com.contadores.dao",
-		"br.com.contadores.model" })
-public class AppConfig extends WebMvcConfigurerAdapter  {
+		"br.com.contadores.model", "br.com.contadores.repository", "br.com.contadores.services" })
+@EnableJpaRepositories(basePackageClasses = { ImovelRepository.class })
+public class AppConfig extends WebMvcConfigurerAdapter {
 
 	@Override
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
@@ -48,17 +52,15 @@ public class AppConfig extends WebMvcConfigurerAdapter  {
 		messageSource.setCacheSeconds(1);
 		return messageSource;
 	}
-	
+
 	@Bean
 	public FormattingConversionService mvcConversionServcei() {
-		
-		DefaultFormattingConversionService defaultFormattingConversionService 
-			= new DefaultFormattingConversionService();
+
+		DefaultFormattingConversionService defaultFormattingConversionService = new DefaultFormattingConversionService();
 		DateFormatterRegistrar dateFormatterRegistrar = new DateFormatterRegistrar();
 		dateFormatterRegistrar.setFormatter(new DateFormatter("yyyy-MM-dd"));
 		dateFormatterRegistrar.registerFormatters(defaultFormattingConversionService);
 		return defaultFormattingConversionService;
 	}
-	
 
 }
